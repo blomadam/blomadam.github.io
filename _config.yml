@@ -10,9 +10,7 @@ description: Data Scientist in NYC
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars2.githubusercontent.com/u/6401316?v=3&s=460
-#https://avatars0.githubusercontent.com/u/6401316?v=3&amp;s=400
-#https://avatars2.githubusercontent.com/u/6401316?v=3&s=40
-#https://avatars1.githubusercontent.com/u/6401316?v=3&s=64
+
 
 #
 # Flags below are optional
@@ -21,7 +19,7 @@ avatar: https://avatars2.githubusercontent.com/u/6401316?v=3&s=460
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email:
+  email: blomadam@gmail.com
   facebook:
   flickr:
   github: blomadam
