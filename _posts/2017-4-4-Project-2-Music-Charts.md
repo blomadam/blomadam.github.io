@@ -40,5 +40,58 @@ Amidst the dozens of completely full columns lie three nearly empty ones!!  Furt
 df.iloc[:,30:35].head().to_html()
 ```
 
-<table border="1" class="dataframe">\n  <thead>\n    <tr style="text-align: right;">\n      <th></th>\n      <th>x24th.week</th>\n      <th>x25th.week</th>\n      <th>x26th.week</th>\n      <th>x27th.week</th>\n      <th>x28th.week</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>12</td>\n      <td>15</td>\n      <td>22</td>\n      <td>29</td>\n      <td>31</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>36</td>\n      <td>48</td>\n      <td>47</td>\n      <td>NaN</td>\n      <td>*</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>12</td>\n      <td>14</td>\n      <td>17</td>\n      <td>21</td>\n      <td>24</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>44</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>*</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>*</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>*</td>\n    </tr>\n  </tbody>\n</table>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x24th.week</th>
+      <th>x25th.week</th>
+      <th>x26th.week</th>
+      <th>x27th.week</th>
+      <th>x28th.week</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>12</td>
+      <td>15</td>
+      <td>22</td>
+      <td>29</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>36</td>
+      <td>48</td>
+      <td>47</td>
+      <td>NaN</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12</td>
+      <td>14</td>
+      <td>17</td>
+      <td>21</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>44</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>*</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>*</td>
+    </tr>
+  </tbody>
+</table>
 
