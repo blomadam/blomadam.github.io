@@ -34,64 +34,9 @@ x26th.week         37 non-null object
 x27th.week         30 non-null object
 x28th.week         317 non-null object
 ```
-Amidst the dozens of completely full columns lie three nearly empty ones!!  Further exploration shows:
+Amidst the dozens of completely full columns lie three nearly empty ones!!  Further exploration showed that weeks 25-27 included null (np.NaN) values for entries where the track was not on the charts during that week, while all the others used asterisks (*).  A simple lambda function applied to all cells in the table converted all the columns to use the null value format.
 
 ```python
-df.iloc[:,30:35].head().to_html()
+df = df.applymap(lambda x: np.NaN if x=='*' else x)
 ```
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>x24th.week</th>
-      <th>x25th.week</th>
-      <th>x26th.week</th>
-      <th>x27th.week</th>
-      <th>x28th.week</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>12</td>
-      <td>15</td>
-      <td>22</td>
-      <td>29</td>
-      <td>31</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>36</td>
-      <td>48</td>
-      <td>47</td>
-      <td>NaN</td>
-      <td>*</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>12</td>
-      <td>14</td>
-      <td>17</td>
-      <td>21</td>
-      <td>24</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>44</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>*</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>*</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>*</td>
-    </tr>
-  </tbody>
-</table>
 
