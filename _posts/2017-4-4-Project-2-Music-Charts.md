@@ -3,9 +3,8 @@ layout: post
 title: Project 2 - Music Charts
 ---
 
-This week I am looking at the Billboard top 100 most popular songs for 
-roughly the entire year 2000.  As with any project, the steps to a good 
-analysis are:
+This week I am looking at the Billboard top 100 most popular songs from 
+the year 2000.  As with any project, I followed the following steps during my analysis:
 
 1. Understand the structure of your data set
 2. Clean and transform your data set
@@ -14,18 +13,18 @@ analysis are:
 5. Create final visualizations
 
 
-I am approaching this dataset from the mindset of a manager of an upcoming band.  I want to be able to advise them about how different genres perform in the charts.  Most notably, I am interested in the peak ranking, and also the duration tracks from each genre tend to stay in the charts.  With that in mind, let's get cracking!
+I am approaching this dataset from the mindset of a manager of an up and coming band.  I want to be able to advise them about how different genres perform in the charts.  Most notably, I am interested in both the peak ranking and the number of weeks tracks stay in the charts.  The success of a track requires a combination of these factors.
 
 
 ## 1. Data structure
 
-This dataset has 317 entries with 83 columns of data.  The first seven columns give details we are used to about the track: the year (which happens to be 2000 for every entry in this list), the artist name, track name, track length, and musical genre.  Then come the interesting data columns about each track's performance in the Billboard charts: the date each track first appeared on the chart, and the date each track peaked (reached its highest ranking), followed 76 columns storing each track's ranking for each week since it first entered the chart.
+This dataset has 317 entries with 83 columns of data.  The first seven columns give the usual details about the track: the year (which happens to be 2000 for every entry in this list), the artist name, track name, track length, and musical genre.  Next come the data columns describing each track's performance in the Billboard charts: the date each track first appeared on the chart, and the date each track peaked (reached its highest ranking), followed 76 columns storing each track's ranking for each week since it first entered the chart.
 
-I did not question how any of these quantities were calculated, but simply charted the data as it appeared, while also doing a simple sanity check of researching a couple of the most popular songs of the year to make sure their performance matched my analysis of the data.  *Breathe* by Faith Hill, for example, I correctly identified as a massively popular song, but I see that its genre is listed as Rap.... though I, personally, would have considered it Country.  I see this exercise as vindication that I can correctly interpret the most important aspect of the data (i.e. the rankings), and caution should be taken before trusting data read from any table.
+I did not question how any of these fields were filled, but simply charted the data as it appeared, while also doing a simple sanity check by researching a couple of the most popular songs of the year to verify my analysis of the data matched their actual performance.  Consider *Breathe* by Faith Hill, for example: I correctly identified *Breathe* as a massively popular song, but the genre is listed as Rap.... though I would have considered it Country.  I see this exercise as vindication that I can correctly interpret the most important aspect of the data (i.e. the rankings), and also as a cautionary note about blindly trusting data read from any table.
 
 ## 2. Data cleaning and transformation
 
-At first glance, this dataset seemed remarkably complete.  Nearly every column was listed as completely full, and I thought just some simple type conversions and summarization would be required.  Careful reading of the `df.info()` result showed some trickery starting around column 30:
+At first glance, this dataset seemed remarkably complete.  Nearly every column was listed as completely full, and I thought just some simple type conversions and summarization would be required.  Careful reading of the `df.info()` result showed some issues starting around week 25:
 
 ```
 x24th.week         317 non-null object
@@ -35,7 +34,7 @@ x27th.week         30 non-null object
 x28th.week         317 non-null object
 ```
 
-Amidst the dozens of completely full columns lie three nearly empty ones!!  Further exploration showed that weeks 25-27 included null (np.NaN) values for entries where the track was not on the charts during that week, while all the others used asterisks (*).  A simple lambda function applied to all cells in the table converted all the columns to use the null value format.
+Amidst the dozens of completely full columns lie three nearly empty ones!!  Further exploration showed that weeks 25-27 included null (`np.NaN`) values for entries where the track was not on the charts during that week, while all the others used asterisks (`*`).  A simple lambda function applied to all cells in the table converted all the columns to use the null value format.
 
 With all the weekly ranking columns in a suitable format, I was able to summarize the rankings into a single column containing a tuple of the rankings, and then count the total number of weeks the track appeared on the charts.  I used lambda functions again to add these columns to the dataframe (note that I replaced the null values with 101 to make plotting easier), and then I dropped the 76 columns I wouldn't be needing anymore:
 
@@ -46,7 +45,7 @@ df['weeks_on_list'] = df['week_list'].apply(lambda x: len([i for i in x if i<101
 df = df.drop(df.columns[8:83], axis=1)
 ```
 
-This cleaning and summarization process had the benefit of converting all the data into integers that would be easy to plot.  Now I just needed to convert the columns holding dates and times into a suitable format for plotting as well.  Luckily, the `pd.to_datetime` function was able to convert my track length, date entered and date peaked columns very easily.  The resulting datetime objects can be reformatted into any suitable form as required later.
+This cleaning and summarization process had the benefit of converting all the data into integers that would be easy to plot.  Now I just needed to convert the columns holding dates and times into a suitable format for plotting as well.  Luckily, the `pd.to_datetime` function was able to convert my track length, date entered and date peaked columns very easily.  The resulting datetime objects can be reformatted into any suitable format later, as required.
 
 I noticed that my genres column had some values that should be grouped together.  I cleaned them up with the following lambda functions to combine `Rock` with `Rock'n'Roll` and `R & B` with `R&B`:
 
@@ -55,7 +54,7 @@ df['genre'] = df['genre'].apply(lambda x: 'Rock' if x=="Rock'n'roll" else x)
 df['genre'] = df['genre'].apply(lambda x: 'R & B' if x=='R&B' else x)
 ```
 
-I now have rankings for each week, the total number of weeks spent on the charts, and the track genres cleaned up and ready for analysis.  I'm really interested in combining the total ranking and duration of tracks on the chart to get a sense of their overall popularity.  For this, I created a function to combine those two aspects of each tracks performance into a score value that I store as a new column:
+I now had rankings for each week, the total number of weeks spent on the charts, and the track genres cleaned up and ready for analysis.  I'm actually interested in combining the ranking and duration of each track to get a sense of its overall popularity.  For this, I created a function to combine those two aspects of each tracks performance into a score value that I store as a new column:
 
 ```python
 def scoring(series):
@@ -89,11 +88,11 @@ df['score'] = df['week_list'].apply(scoring)
 
 ## 3. Data exploration and hypothesis iteration
 
-The first step to exploration is to pick a variable and look at its plot, so I did a histogram of the number of weeks spent on the chart.  One can clearly see that many songs fall off the charts about 20 weeks after they enter.  Additionally, the distribution is weighted towards shorter durations, with just a few songs lasting significantly longer than the median.
+The first step to exploration is to pick a variable and look at its plot, so I did a histogram of the number of weeks spent on the chart.  One can clearly see that many songs fall off the charts about 20 weeks after they enter.  Additionally, the distribution is weighted towards shorter durations, with just a few songs lasting significantly longer than the median (around 20).
 
 ![](../images/project2/weeks_hist.png)
 
-This chart is great for a general overview of the trends for a general track, but I'd really like to get more detailed information about the individual genres.  To this end I made another histogram where I plot the distribution of the three biggest genres: Rock, Country, and Rap.  I normalized the histogram by dividing height of each distribution by the number of entries, converting the counts into probabilities or frequencies.  This chart quickly becomes confusing to read with too mych information overlapped on top of each other, but it appears that the Country and Rock (orange and blue) charts have a taller peak at 20 weeks than Rap does, and that Rock has the most prominent tail stretching out past 20 weeks.
+This chart is great for a general overview of the trends for a general track, but I'd like to get more detailed information about the individual genres.  To this end, I made another histogram where I plot the distribution of the three biggest genres: Rock, Country, and Rap.  I normalized the histogram by dividing height of each distribution by the number of entries, converting the counts into probabilities or frequencies.  This chart quickly becomes confusing to read with too mych information overlapped on top of each other, but it appears that the Country and Rock (orange and blue) charts have a taller peak at 20 weeks than Rap does, and that Rock has the most prominent tail stretching out past 20 weeks.
 
 ![](../images/project2/genre_hist_weeks.png)
 
