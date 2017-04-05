@@ -91,4 +91,4 @@ df['score'] = df['week_list'].apply(scoring)
 
 The first step to exploration is to pick a variable and look at its plot, so I did a histogram of the number of weeks spent on the chart.  One can clearly see that many songs fall off the charts about 20 weeks after they enter.  Additionally, the distribution is weighted towards shorter durations, with just a few songs lasting significantly longer than the median.
 
-![](images/project2/weeks_hist.png)
+![](../images/project2/weeks_hist.png)
