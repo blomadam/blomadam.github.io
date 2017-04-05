@@ -92,3 +92,79 @@ df['score'] = df['week_list'].apply(scoring)
 The first step to exploration is to pick a variable and look at its plot, so I did a histogram of the number of weeks spent on the chart.  One can clearly see that many songs fall off the charts about 20 weeks after they enter.  Additionally, the distribution is weighted towards shorter durations, with just a few songs lasting significantly longer than the median.
 
 ![](../images/project2/weeks_hist.png)
+
+This chart is great for a general overview of the trends for a general track, but I'd really like to get more detailed information about the individual genres.  To this end I made another histogram where I plot the distribution of the three biggest genres: Rock, Country, and Rap.  I normalized the histogram by dividing height of each distribution by the number of entries, converting the counts into probabilities or frequencies.  This chart quickly becomes confusing to read with too mych information overlapped on top of each other, but it appears that the Country and Rock (orange and blue) charts have a taller peak at 20 weeks than Rap does, and that Rock has the most prominent tail stretching out past 20 weeks.
+
+![](../images/project2/genre_hist_weeks.png)
+
+This muddy situation is clarified by using a series of boxplots (one for each genre).  We lose some information (namely how severely peaked the data is at 20 weeks), but we gain more clarity in the relative widths of each distribution, and more clearly see the median values stacking up.  In particular, I notice that although Rock and Country have very similar medians and Q1 boundaries, the Country distribution has almost no entries above the median value (Q3 is very close to the median), while the Rock distribution stretched much higher above the median value.  This lead me to my first hypothesis:
+
+### Do Rock songs spend more time on the charts, on average, than Country songs?
+
+![](../images/project2/genre_weeks.png)
+
+
+Before I go too far down this analysis path, I don't want to forget about considering the total rank of each song, in addition to how long it stays on the charts.  I am also interested in finding songs that might have spent 2 months in the top 10 in addiiton to songs that were on the chart for 6 months but never break into the top 40.  To this end, I plotted the rank of each song over time, lining up their starting dates so that I can compare their trajectories.  Again, I also color coded songs by genre for the biggest three genres.
+
+![](../images/project2/genre_trajectory.png)
+
+Looking at the trajectories, we can see that most songs run their entire course in the first 20 weeks.  Popping onto the charts around position 75 in their first week, steadily climbing to a peak around week 12 and dropping off by week 20.  There are more Rock songs climbing to the top of the charts, but it is decidedly mixed between the genres in the first 20 weeks.  Looking at the wider arcs, we again see more Rock songs, but this is largely due to their prevalence in the data set.  We also see Rap and Country songs having long term success, and the density is such that we can follow individual lines.  It seems like perhaps the genres have a little more spread when both time and rank are considered.
+
+![](../images/project2/genre_scores.png)
+
+To study this more closely, I made another set of box plots for the score distributions by genre.  Clearly the hits are spread among the genres, with every genre with more than 5 entries in the table having at least one smash hit with a score over 300.  To get a better sense of how good these scores are, I can plot a histogram of their distribution over all genres:
+
+![](../images/project2/scores_hist.png)
+
+One can see that most scores are below 100, so scores over 200 are quite rare, and over 300 is a candidate for best song of the year!  Going back to the boxplot of scores, one can see that most of the songs in the good gategory (i.e. scores between 100 to 200) fall into the Rock and Latin genres, though most genres have at least one big hit (over 250).  This leads me to my second question to investigate:
+
+### Do Rock songs recieve higher scores, on average, than Country songs?
+
+To test my hypotheses, I will set up 2-sample t-tests with a level of significance of 5%.  I need to carefully consider the results because I set up my hypotheses to be 1-tailed tests, while the SciPy analyses return 2-tailed results by default.
+
+
+## 4. Run the tests
+
+Actually running the t-tests is very simple: simply run the ttest packages from the SciPy stats module.  I use the ttest_ind method because I have two samples with independent scores (i.e. the Rock score and the Country score are not correlated).  I also made sure to explicity say that the vairance of my samples are not the same so they will be calculated from the data.
+
+```python
+tstat1, pval1 = stats.ttest_ind(a= df[df['genre']=='Rock']['score'],
+                b= df[df['genre']=='Country']['score'],
+                equal_var=False)
+tstat2, pval2 = stats.ttest_ind(a= df[df['genre']=='Rock']['weeks_on_list'],
+                b= df[df['genre']=='Country']['weeks_on_list'],
+                equal_var=False)
+alpha = 0.05
+print "Do Pop songs get a higher score than Country songs?"
+print pval1*2 < alpha
+print "Do Pop songs stay on the charts longer than Country songs?"
+print 2 * pval2 < alpha
+```
+
+This section of code returns:
+```
+Do Pop songs get a higher score than Country songs?
+True
+Do Pop songs stay on the charts longer than Country songs?
+False
+```
+
+### There is no statistically significant evidence that Rock songs stay on the charts longer that Country songs, but there is evidence that Rock songs recieve higher scores than Country tracks.
+
+## 5. Final visualizations
+
+This section was largely completed before the last two, as I used those final plots earlier in this post.  There were a couple additional stories in the data that I wanted to point out.
+
+I noticed a phenomena I'm calling "fad tracks" for songs which enter the charts in the top 25, but then quickly fade away and fall off the rankings.  This is different from "smash hits" which start out in the top 25, but then stay there for 20 weeks or more, often staying on the charts longer than songs with a traditional rise to popularity (i.e. entering the charts below rank 60).  *This Time Around* by Hanson and *Crybaby* by Mariah Carey are examples of fad tracks (seen in red below), while *Maria, Maria* by Santana and *There U Go* by Pink are smash hits (seen in blue).
+
+![](../images/project2/fad_tracks.png)
+
+Finally, I wanted to point out some interesting tidbits about the opposite of a fad track: that is a track that runs the typical course of entering the charts somewhere lower down and peaking before falling off the charts around week 20, but then sees a resurgence of popularity and storms back onto up up to the top of the charts after a dozen weeks off!  *Amazed* by Lonestar and *Higher* by Creed are examples of resurgent tracks seen in red below.  There are also traditional hits that just rule the charts for weeks on end during the year.  Two examples are *Breathe* by Faith Hill and *Kryptonite* by 3 Doors Down, which are shown in blue below.
+
+![](../images/project2/resurgent_tracks.png)
+
+
+
+
+
+
