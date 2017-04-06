@@ -1,4 +1,19 @@
+---
+layout: post
+title: Project 2 - Music Charts
+---
+<style type="text/css">
+  table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
 
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
+}
+</style>
 
 ```python
 import pandas as pd
