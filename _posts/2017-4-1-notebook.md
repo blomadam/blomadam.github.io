@@ -6,6 +6,7 @@ title: Project 2 - Music Charts
 
 table {
     width: 100%;
+    display: block;
     overflow: auto;
 }
 
