@@ -3,18 +3,21 @@ layout: post
 title: Project 2 - Music Charts
 ---
 <style type="text/css">
+
+  table {
+    overflow: auto;
+    max-width: 800px;
+  }
   table.dataframe {
     font-family: Arial, sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 20px;
-    overflow: auto;
-    max-width: calc(100% - 14ex);
-}
+  }
 
-table.dataframe th, td {
+  table.dataframe th, td {
     padding: 4px;
     text-align: left;
-}
+  }
 </style>
 
 ```python
