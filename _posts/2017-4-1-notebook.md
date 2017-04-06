@@ -4,20 +4,21 @@ title: Project 2 - Music Charts
 ---
 <style type="text/css">
 
-  table {
+table {
+    width: 100%;
+    display:block;
+}
+thead {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+}
+tbody {
+    height: 200px;
+    display: inline-block;
+    width: 100%;
     overflow: auto;
-    max-width: 800px;
-  }
-  table.dataframe {
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    line-height: 20px;
-  }
-
-  table.dataframe th, td {
-    padding: 4px;
-    text-align: left;
-  }
+}
 </style>
 
 ```python
