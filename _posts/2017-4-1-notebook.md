@@ -7,6 +7,8 @@ title: Project 2 - Music Charts
     font-family: Arial, sans-serif;
     font-size: 13px;
     line-height: 20px;
+    overflow-x: auto;
+    max-width: calc(100% - 14ex);
 }
 
 table.dataframe th, td {
