@@ -13,10 +13,10 @@ table {
     font-size: 13px;
     line-height: 20px;
     padding: 4px;
-    text-align: left;
+    text-align: center;
 }
 
-th {
+tr th {
     font-weight: bold;
 }
 </style>
