@@ -16,8 +16,8 @@ table {
     text-align: left;
 }
 
-table.dataframe th {
-    font-style: bold;
+th {
+    font-weight: bold;
 }
 </style>
 
