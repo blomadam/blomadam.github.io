@@ -12,7 +12,7 @@ table {
     font-family: Arial, sans-serif;
     font-size: 13px;
     line-height: 20px;
-    padding: 4px;
+    padding: 14px;
     text-align: center;
 }
 
