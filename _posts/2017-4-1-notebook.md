@@ -12,6 +12,7 @@ thead {
     display: inline-block;
     width: 100%;
     height: 20px;
+    overflow: auto;
 }
 tbody {
     height: 240px;
