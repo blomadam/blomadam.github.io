@@ -14,10 +14,21 @@ thead {
     height: 20px;
 }
 tbody {
-    height: 200px;
+    height: 240px;
     display: inline-block;
     width: 100%;
     overflow: auto;
+}
+
+table.dataframe {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+table.dataframe th, td {
+    padding: 4px;
+    text-align: left;
 }
 </style>
 
