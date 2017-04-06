@@ -12,12 +12,18 @@ table {
     font-family: Arial, sans-serif;
     font-size: 13px;
     line-height: 20px;
-    padding: 14px;
     text-align: center;
 }
 
-tr th {
-    font-weight: bold;
+th {
+  font-weight: bold;
+  padding: 4px;
+}
+td {
+  padding: 4px;
+}
+tbody th {
+    text-align: center;
 }
 </style>
 
