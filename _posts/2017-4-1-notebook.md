@@ -6,18 +6,6 @@ title: Project 2 - Music Charts
 
 table {
     width: 100%;
-    display:block;
-}
-thead {
-    display: inline-block;
-    width: 100%;
-    height: 20px;
-    overflow: auto;
-}
-tbody {
-    height: 240px;
-    display: inline-block;
-    width: 100%;
     overflow: auto;
 }
 
