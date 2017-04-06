@@ -2,30 +2,6 @@
 layout: post
 title: Project 2 - Music Charts
 ---
-<style type="text/css">
-
-table {
-    width: 100%;
-    height: 240px;
-    display: block;
-    overflow: auto;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    line-height: 20px;
-    text-align: center;
-}
-
-th {
-  font-weight: bold;
-  padding: 4px;
-}
-td {
-  padding: 4px;
-}
-tbody th {
-    text-align: center;
-}
-</style>
 
 ```python
 import pandas as pd
