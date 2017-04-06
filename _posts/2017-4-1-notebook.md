@@ -6,19 +6,18 @@ title: Project 2 - Music Charts
 
 table {
     width: 100%;
+    height: 240px;
     display: block;
     overflow: auto;
-}
-
-table.dataframe {
     font-family: Arial, sans-serif;
     font-size: 13px;
     line-height: 20px;
-}
-
-table.dataframe th, td {
     padding: 4px;
     text-align: left;
+}
+
+table.dataframe th {
+    font-style: bold;
 }
 </style>
 
