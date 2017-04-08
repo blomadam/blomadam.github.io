@@ -1117,7 +1117,7 @@ plt.ylabel("Count",fontsize=20)
 
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_32_1.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_32_1.png)
 
 
 
@@ -1139,7 +1139,7 @@ plt.ylabel("Count",fontsize=20)
 
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_33_1.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_33_1.png)
 
 
 ### notes on the graph
@@ -1178,7 +1178,7 @@ pd.concat( [df[(df['x1st.week']<30) & (df['weeks_on_list']>20)] , df[(df['x1st.w
 ```
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_35_0.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_35_0.png)
 
 
     blue, then red rows from database
@@ -1296,7 +1296,7 @@ pd.concat([df[df['weeks_on_list']==53], df[df['weeks_on_list']>53]])
 ```
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_36_0.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_36_0.png)
 
 
     blue, then red rows from database
@@ -1411,7 +1411,7 @@ plt.show()
 ```
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_37_0.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_37_0.png)
 
 
 
@@ -1430,7 +1430,7 @@ plt.show()
 ```
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_38_0.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_38_0.png)
 
 
 
@@ -1450,7 +1450,7 @@ plt.show()
 ```
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_39_0.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_39_0.png)
 
 
 
@@ -1464,7 +1464,7 @@ plt.show()
 ```
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_40_0.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_40_0.png)
 
 
 
@@ -1484,7 +1484,7 @@ plt.show()
 ```
 
 
-![png](project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_41_0.png)
+![png](../images/project-2-billboard-exploratory-analysis_files/project-2-billboard-exploratory-analysis_41_0.png)
 
 
 
