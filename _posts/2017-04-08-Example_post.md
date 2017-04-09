@@ -6,18 +6,14 @@ date: 2017-04-08
 published: true
 ---
 
-First load the python libraries
+## This is an example post to demonstrate the capabilities of the Jupyter nbconvert function
+
+Code blocks and tables work great!  The YAML block above this does not... that will have to be added manually after the conversion
 
 
 ```python
 import pandas as pd
 %matplotlib inline
-```
-
-Then load and display the data
-
-
-```python
 df = pd.read_csv("http://vincentarelbundock.github.io/Rdatasets/csv/datasets/crimtab.csv")
 print df.shape
 df
@@ -1073,6 +1069,8 @@ df
 
 
 
+So do inline plots and lists
+
 Make a plot with:
 - column 3
 - column 5
@@ -1083,10 +1081,15 @@ df.plot(y=[3,5]);
 ```
 
 
-![png](../images/Example_post_files/Example_post_6_0.png)
+![png](../images/Example_post_files/Example_post_4_0.png)
 
 
-Test making an equation with $\alpha = \frac{d}{dx}e^{-x}$
+### Equations are not so great... 
 
-include a picture from another location:
-![Math.png](attachment:Math.png)
+$\alpha = \frac{d}{dx}e^{-x}$
+
+### Attempt to include a picture from another location (looks great in original notebook):
+![png](../images/Math.png)
+
+### Attempt to include a picture via drag and drop:
+![Rate.png](attachment:Rate.png)
