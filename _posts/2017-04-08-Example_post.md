@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ipynb conversion example
+title: Notebook conversion example
 date: 2017-04-08
 published: true
 ---
