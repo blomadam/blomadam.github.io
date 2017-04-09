@@ -5,8 +5,6 @@ date: 2017-04-08
 published: true
 categories: tutorials
 ---
-## This is an example post to demonstrate the capabilities of the Jupyter nbconvert function
-
 ### Quick overview
 ##### Things that work well:
 - Text in Markdown cells
@@ -30,6 +28,7 @@ categories: tutorials
 
 
 ##### Things I'd like to work better:
+- Remove previous entries with same name (after prompt?)
 - Differentiation between Input and Result cells
 - Remove the `42 rows × 23 columns` output after tables (or attach it to the table better)
 - Fix LaTeX (perhaps by using different markdown interpreter in Jekyll)
@@ -1094,11 +1093,13 @@ df
 
 
 
-### Attempt inline plots and lists
+### Attempt inline plots, links, and lists
 
 Make a plot with:
 - column 3
 - column 5
+
+Details about the data available [here](http://vincentarelbundock.github.io/Rdatasets/doc/datasets/discoveries.html).
 
 
 ```python
