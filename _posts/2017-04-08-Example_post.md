@@ -1,14 +1,31 @@
-
 ---
 layout: post
 title: ipynb conversion example
 date: 2017-04-08
 published: true
 ---
-
 ## This is an example post to demonstrate the capabilities of the Jupyter nbconvert function
 
-Code blocks and tables work great!  The YAML block above this does not... that will have to be added manually after the conversion
+### Quick overview
+##### Things that work well:
+- Text in Markdown cells
+- Code blocks
+- Tables (even better with my CSS code)
+- Inline plots  (best when using my new_post shortcut)
+- YAML as first line (if cell type is Raw NBConvert)
+
+
+##### Things that don't work so well:
+- Manually added pictures
+- LaTeX equations
+
+
+##### Things my new_post function does:
+- Convert to markdown
+- Fix inline plot image addresses
+- Move post and images to blog directory
+- Add and commit new post files to git
+- push changes to server
 
 
 ```python
@@ -1081,7 +1098,7 @@ df.plot(y=[3,5]);
 ```
 
 
-![png](../images/Example_post_files/Example_post_4_0.png)
+![png](Example_post_files/Example_post_4_0.png)
 
 
 ### Equations are not so great... 
@@ -1089,7 +1106,7 @@ df.plot(y=[3,5]);
 $\alpha = \frac{d}{dx}e^{-x}$
 
 ### Attempt to include a picture from another location (looks great in original notebook):
-![png](../images/Math.png)
+![png](Math.png)
 
 ### Attempt to include a picture via drag and drop:
 ![Rate.png](attachment:Rate.png)
