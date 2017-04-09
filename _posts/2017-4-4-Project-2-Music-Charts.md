@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Project 2 - Music Charts
+categories: projects
 ---
 
 This week I am looking at the Billboard top 100 most popular songs from 
