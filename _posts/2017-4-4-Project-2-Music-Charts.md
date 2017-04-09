@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Project 2 - Music Charts
+date: 2017-04-04
+published: true
 categories: projects
 ---
 

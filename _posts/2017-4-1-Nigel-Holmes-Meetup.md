@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Viz meetup with Nigel Holmes
+title: Data viz. meetup with Nigel Holmes
 categories: Networking
 ---
 
