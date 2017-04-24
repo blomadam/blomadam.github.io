@@ -4,29 +4,17 @@ title: About
 permalink: /about/
 ---
 
-My name is Adam.  I grew up in the vast desert of Washington State.  I still slightly resent the fact that I have to add the word "state" to that sentence for anyone to know what I'm talking about, but I love teaching them about the desert there so I still go around saying it.
+### General Information
+I am a versatile scientist with a strong background in regression and experimental design.  I welcome the challenge of explaining technical subjects to variety of audiences.  Similarly, I love discussing technical subjects to expand my understanding.  I am currently looking for an active environment to make an impact.
 
-Some of my favorite things are: having fun with my wife and pup, learning something new, sharing something I've learned, and anything made by Apple Inc.
+### Interests
 
-I'm also into podcasts and fitness
-
-### More Information
-
-Here is a synopsis of my life interests:
-
- - Swimming
- - Kamiakin HS  (Go Braves!)
- - Running
- - Hazardous Wastes (PNNL)
  - Programming
- - UDel (go Blue Hens!)
- - Radio-isotopes (AMIC)
+ - Podcasts
+ - Nuclear Technologies
  - Cybersecurity
- - UMass Amherst (Go Minutemen!)
- - Bicycling
- - Temple U. (Go Owls!)
- - Philly Marathon
- - General Assembly DSI (Go Lovelaces!)
+ - Fitness
+ - General Assembly DSI
 
 ### Contact me
 

@@ -1,44 +1,33 @@
 ---
 layout: post
-title: Project 3 - House Prices
+title: Housing Prices Project
 date: 2017-04-12
 published: true
 categories: projects
 tags:
 ---
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import sklearn.linear_model as lm
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-import scipy.stats as stats
-import numpy as np
-import itertools
-%matplotlib inline
-```
-
-    /Users/blomadam/miniconda2/lib/python2.7/site-packages/IPython/html.py:14: ShimWarning: The `IPython.html` package has been deprecated. You should import from `notebook` instead. `IPython.html.widgets` has moved to `ipywidgets`.
-      "`IPython.html.widgets` has moved to `ipywidgets`.", ShimWarning)
-
+#Overview
 
 ## Problem Statement
 
 We have a data set of real estate prices from Aimes, Iowa.  Our goal is to provide a model to predict prices using a subset of the columns to be able to reduce the size of the database the company is required to store.
 
-We are also interested in providing descriptive statistics for the market, specificall which neighborhoods have many sales and high prices.  Finally, we are interested in describing how this data has changed over time.
+We are also interested in providing descriptive statistics for the market, specifically which neighborhoods have many sales and high prices.  Finally, we are interested in describing how this data has changed over time.
 
-Our deliverables will include a predictive model (and an estimate of its value), and a brief summary of the neighborhood data.
+Our deliverables will include a predictive model, an estimate of its value, and a brief summary of the neighborhood data.
+
 
 ## Results summary
 
-The most significant predictor of housing price is the OverallQuality of the property.  Additionally, there is a nonlinear relation between this quality and Sale Price, with a quadratic term added to the model showing an even stronger correlation than the linear term.
+The most significant predictor of housing price is the `OverallQuality` of the property.  Additionally, there is a nonlinear relation between this quality and `SalePrice`, with a quadratic term added to the model showing an even stronger correlation than the linear term.
 
-I suggest a simplified model with six parameters to predict sale prices.  The linear model with ['LotArea', 'OverallQual', 'OverallCond', 'YearBuilt', 'GrLivArea', 'OverallQualSquared'] explains the variation in the data just about as well as the best model with twice as many parameters (difference in R^2 on a test set is less than 0.01).  This parameter selection is stable over repeated selections of test and training data in a 2:1 split.
+I suggest a simplified model with six parameters to predict `SalePrices`.  The linear model with `['LotArea', 'OverallQual', 'OverallCond', 'YearBuilt', 'GrLivArea', 'OverallQualSquared']` explains the variation in the data just about as well as the best model with twice as many parameters (difference in R-squared on a test set is less than 0.01).  This parameter selection is stable over repeated selections of test and training data in a 2:1 split.
 
-NAmes and CollgCr are the largest markets (with CollgCr also having high prices). NoRidge, NridgHt, and StoneBr have the highest average sale prices.  Crawfor has prices that are trending higher.
+`NAmes` and `CollgCr` are the largest markets (with `CollgCr` also having high prices). `NoRidge`, `NridgHt`, and `StoneBr` have the highest average sale prices.  `Crawfor` has prices that are trending higher.
+
+
+# Detailed Analysis
 
 ## Read in the data
 
@@ -50,16 +39,10 @@ avail_columns = ["LotArea", "Utilities", "Neighborhood", "BldgType", "HouseStyle
            ,"OverallCond", "YearBuilt", "YearRemodAdd", "RoofStyle", "RoofMatl" \
            ,"GrLivArea", "FullBath", "HalfBath", "BedroomAbvGr", "KitchenAbvGr" \
            ,"MoSold", "YrSold", "SalePrice"]
-```
 
 
-```python
 df = pd.read_csv("train.csv", usecols=avail_columns)
-```
-
-
-```python
-df
+print df
 ```
 
 
@@ -1441,17 +1424,14 @@ df
 
 
 
-## Explore each variable and corrrelations
-Check the info on the data frame for column data types and null values.  Any column with dtype of int64 is complete since a single string or NaN entry would change the dtype for the entire column.  The object columns are all expected to have string values, so no worries there.  Check the value_counts on the object columns for mis-spelled labels.
+## Explore each variable and correlations
+
+Check the info on the data frame for column data types and null values.  Any column with `dtype` of `int64` is complete since a single string or `NaN` entry would change the `dtype` for the entire column.  The object columns are all expected to have string values, so no worries there.  Check the value_counts on the object columns for mis-spelled labels.
 
 
 ```python
 df['YrSold'].describe()
 ```
-
-
-
-
     count    1460.000000
     mean     2007.815753
     std         1.328095
@@ -1463,29 +1443,17 @@ df['YrSold'].describe()
     Name: YrSold, dtype: float64
 
 
-
-
 ```python
 df.Utilities.value_counts()
 ```
-
-
-
-
     AllPub    1459
     NoSeWa       1
     Name: Utilities, dtype: int64
 
 
-
-
 ```python
 df.Neighborhood.value_counts()
 ```
-
-
-
-
     NAmes      225
     CollgCr    150
     OldTown    113
@@ -1514,15 +1482,9 @@ df.Neighborhood.value_counts()
     Name: Neighborhood, dtype: int64
 
 
-
-
 ```python
 df.BldgType.value_counts()
 ```
-
-
-
-
     1Fam      1220
     TwnhsE     114
     Duplex      52
@@ -1531,15 +1493,9 @@ df.BldgType.value_counts()
     Name: BldgType, dtype: int64
 
 
-
-
 ```python
 df.HouseStyle.value_counts()
 ```
-
-
-
-
     1Story    726
     2Story    445
     1.5Fin    154
@@ -1551,15 +1507,9 @@ df.HouseStyle.value_counts()
     Name: HouseStyle, dtype: int64
 
 
-
-
 ```python
 df.RoofStyle.value_counts()
 ```
-
-
-
-
     Gable      1141
     Hip         286
     Flat         13
@@ -1569,15 +1519,9 @@ df.RoofStyle.value_counts()
     Name: RoofStyle, dtype: int64
 
 
-
-
 ```python
 df.RoofMatl.value_counts()
 ```
-
-
-
-
     CompShg    1434
     Tar&Grv      11
     WdShngl       6
@@ -1590,7 +1534,7 @@ df.RoofMatl.value_counts()
 
 
 
-Need to decide which vairables should become dummified.  We do this with categorical classifications that we expect to have a stron impact on the result.  Utilities and RoofMatl may not be good choices since there is so little variation... though we should inspect them to see if there is a strong correlation with the price.
+Need to decide which variables should become dummified.  We do this with categorical classifications that we expect to have a strong impact on the result.  Utilities and RoofMatl may not be good choices since there is so little variation... though we should inspect them to see if there is a strong correlation with the price.
 
 
 ```python
@@ -1675,9 +1619,6 @@ plt.scatter(df.OverallQual**2,df.SalePrice)
 #df.corr()
 ```
 
-
-
-
     <matplotlib.collections.PathCollection at 0x1178f5750>
 
 
@@ -1738,21 +1679,7 @@ for n in range(1,len(features)+1):
             #print type(algorithm)
             ## Fit model to data
             model = algorithm.fit(fit_xtrain,fit_ytrain)
-            ## PLOT DATA
-#             plt.scatter(fit_ytrain,model.predict(fit_xtrain))
-#             plt.plot(fit_ytrain,fit_ytrain,c='k')
-#             plt.xlabel("Actual")
-#             plt.ylabel("Predictions")
-#             plt.title("Training Set")
-#             plt.show()
-#             plt.scatter(fit_ytest,model.predict(fit_xtest))
-#             plt.plot(fit_ytest,fit_ytest,c='k')
-#             plt.xlabel("Actual")
-#             plt.ylabel("Predictions")
-#             plt.title("Test Set")
-#             plt.show()
-#             ## PRINT MODEL SCORE
-#             print "Training r2 score : {}".format(algorithm.score(fit_xtrain, fit_ytrain));
+
             test_r2 = algorithm.score(fit_xtest, fit_ytest)
 #             print "Test r2 score : {}".format(test_r2);
             if test_r2 > max_r2:
@@ -1763,9 +1690,6 @@ for n in range(1,len(features)+1):
     results.append( (max_r2,coeff_sum, mse, best_features))
 results
 ```
-
-
-
 
     [(0.64493256596024184,
       3738.6815185367077,
@@ -1790,120 +1714,63 @@ results
      (0.79010957401318027,
       12257.811452486383,
       1292629492.7138808,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'GrLivArea',
-       'OverallQualSquared']),
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'GrLivArea',       'OverallQualSquared']),
      (0.79432162376193627,
       12698.291873405064,
       1266689196.9408765,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'GrLivArea',
-       'KitchenAbvGr',
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'GrLivArea',       'KitchenAbvGr',
        'OverallQualSquared']),
      (0.79589913657403477,
       12011.917742913709,
       1256973939.1988173,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'GrLivArea',
-       'HalfBath',
-       'KitchenAbvGr',
-       'OverallQualSquared']),
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'GrLivArea',       'HalfBath',
+       'KitchenAbvGr',       'OverallQualSquared']),
      (0.79640356966477699,
       10782.082461790924,
       1253867341.6152034,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'GrLivArea',
-       'HalfBath',
-       'BedroomAbvGr',
-       'KitchenAbvGr',
-       'OverallQualSquared']),
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'GrLivArea',       'HalfBath',
+       'BedroomAbvGr',       'KitchenAbvGr',       'OverallQualSquared']),
      (0.79670268601380689,
       9925.112054464651,
       1252025206.0690444,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'GrLivArea',
-       'FullBath',
-       'HalfBath',
-       'BedroomAbvGr',
-       'KitchenAbvGr',
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'GrLivArea',       'FullBath',
+       'HalfBath',       'BedroomAbvGr',       'KitchenAbvGr',
        'OverallQualSquared']),
      (0.79676710539749784,
       9031.8666018077784,
       1251628473.3697336,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'GrLivArea',
-       'FullBath',
-       'HalfBath',
-       'BedroomAbvGr',
-       'KitchenAbvGr',
-       'YrSold',
-       'OverallQualSquared']),
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'GrLivArea',       'FullBath',
+       'HalfBath',       'BedroomAbvGr',       'KitchenAbvGr',
+       'YrSold',       'OverallQualSquared']),
      (0.79679435921839925,
       8266.0264451278636,
       1251460628.2070935,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'YearRemodAdd',
-       'GrLivArea',
-       'FullBath',
-       'HalfBath',
-       'BedroomAbvGr',
-       'KitchenAbvGr',
-       'YrSold',
-       'OverallQualSquared']),
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'YearRemodAdd',       'GrLivArea',
+       'FullBath',       'HalfBath',       'BedroomAbvGr',
+       'KitchenAbvGr',       'YrSold',       'OverallQualSquared']),
      (0.79655485059789011,
       8153.346260142328,
       1252935664.0748496,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'YearRemodAdd',
-       'GrLivArea',
-       'FullBath',
-       'HalfBath',
-       'BedroomAbvGr',
-       'KitchenAbvGr',
-       'YrSold',
-       'OverallQualSquared',
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'YearRemodAdd',       'GrLivArea',
+       'FullBath',       'HalfBath',       'BedroomAbvGr',
+       'KitchenAbvGr',       'YrSold',       'OverallQualSquared',
        'YearBuiltSquared']),
      (0.79624488667288296,
       7607.3176169180288,
       1254844605.4153514,
-      ['LotArea',
-       'OverallQual',
-       'OverallCond',
-       'YearBuilt',
-       'YearRemodAdd',
-       'GrLivArea',
-       'FullBath',
-       'HalfBath',
-       'BedroomAbvGr',
-       'KitchenAbvGr',
-       'MoSold',
-       'YrSold',
-       'OverallQualSquared',
-       'YearBuiltSquared'])]
+      ['LotArea',       'OverallQual',       'OverallCond',
+       'YearBuilt',       'YearRemodAdd',       'GrLivArea',
+       'FullBath',       'HalfBath',       'BedroomAbvGr',
+       'KitchenAbvGr',       'MoSold',       'YrSold',
+       'OverallQualSquared',       'YearBuiltSquared'])]
 
 
 
@@ -1914,12 +1781,7 @@ plt.xlabel("number of features")
 plt.ylabel("best R^2")
 ```
 
-
-
-
     <matplotlib.text.Text at 0x11913b210>
-
-
 
 
 ![png](../images/project-3-exploration_files/project-3-exploration_27_1.png)
@@ -1932,12 +1794,7 @@ plt.xlabel("number of features")
 plt.ylabel("Abs sum of coeffs")
 ```
 
-
-
-
     <matplotlib.text.Text at 0x117e66550>
-
-
 
 
 ![png](../images/project-3-exploration_files/project-3-exploration_28_1.png)
@@ -1950,12 +1807,7 @@ plt.xlabel("number of features")
 plt.ylabel("MSE")
 ```
 
-
-
-
     <matplotlib.text.Text at 0x11934af50>
-
-
 
 
 ![png](../images/project-3-exploration_files/project-3-exploration_29_1.png)
@@ -1970,18 +1822,9 @@ results[5]
     0.796794359218
 
 
-
-
-
-    (0.79010957401318027,
-     12257.811452486383,
-     1292629492.7138808,
-     ['LotArea',
-      'OverallQual',
-      'OverallCond',
-      'YearBuilt',
-      'GrLivArea',
-      'OverallQualSquared'])
+    (0.79010957401318027,     12257.811452486383,     1292629492.7138808,
+     ['LotArea',      'OverallQual',      'OverallCond',
+      'YearBuilt',      'GrLivArea',      'OverallQualSquared'])
 
 
 
@@ -2023,12 +1866,7 @@ To sum up: NAmes and CollgCr are the largest markets (with CollgCr also having h
 df.SalePrice.hist(bins=20)
 ```
 
-
-
-
     <matplotlib.axes._subplots.AxesSubplot at 0x1178356d0>
-
-
 
 
 ![png](../images/project-3-exploration_files/project-3-exploration_34_1.png)
@@ -2039,12 +1877,7 @@ df.SalePrice.hist(bins=20)
 df.boxplot(column="SalePrice", by="Neighborhood",figsize=(14,8),rot=90,fontsize=16)
 ```
 
-
-
-
     <matplotlib.axes._subplots.AxesSubplot at 0x1182aa550>
-
-
 
 
 ![png](../images/project-3-exploration_files/project-3-exploration_35_1.png)
