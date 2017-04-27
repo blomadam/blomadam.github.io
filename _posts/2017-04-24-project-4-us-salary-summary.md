@@ -1,4 +1,11 @@
-
+---
+layout: post
+title: US Salary Summary
+date: 2017-04-23
+published: true
+categories: projects
+tags:
+---
 
 ```python
 import requests
