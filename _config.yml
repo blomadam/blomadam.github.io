@@ -14,18 +14,19 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 lang: en-US
-title: My Awesome Site
-email:
-description:
+title: Data Science in NYC
+email: blomadam@gmail.com
+description: Data Scientist in NYC
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 author:
-  name:
-  twitter:
-  picture:
-twitter_username:
-github_username:
-logo: # path of site logo, e.g. "/assets/images/logo.png"
+  name: Adam Blomberg, PhD
+  twitter: blomadam
+  linkedin: blomadam
+  picture: https://avatars2.githubusercontent.com/u/6401316?v=3&s=460
+twitter_username: blomadam
+github_username: blomadam
+logo: https://avatars2.githubusercontent.com/u/6401316?v=3&s=460 # path of site logo, e.g. "/assets/images/logo.png"
 
 # Build settings
 markdown: kramdown
