@@ -104,20 +104,7 @@ function new_post {
 When you set up your system for translating the blog posts, you will need to add some CSS code to your html template file to tell Jekyll to format the Pandas DataFrame tables appropraitely.  Below is the relevant section of my `<username>.github.io/_layouts/default.html` file that has the CSS code included at the end of the `<head>` section. You should edit the your defualts file to be similar.
 
 ```html
-<!DOCTYPE html>
-<html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
-    {% include meta.html %}
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-    
     <!-- Begin section for dataframe table formatting -->
     <style type="text/css">
     table.dataframe {
@@ -142,8 +129,6 @@ When you set up your system for translating the blog posts, you will need to add
     }
     </style>
     <!-- End section for dataframe table formatting -->
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
   ```
 
