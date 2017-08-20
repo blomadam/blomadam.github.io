@@ -5,17 +5,22 @@ permalink: /about/
 ---
 
 ### General Information
-I am a versatile scientist with a strong background in regression and experimental design.  I welcome the challenge of explaining technical subjects to variety of audiences.  Similarly, I love discussing technical subjects to expand my understanding.  I am currently looking for an active environment to make an impact.
+I am a versatile scientist with a strong background in regression and experimental design.  I welcome the challenge of explaining technical subjects to variety of audiences.  Similarly, I love discussing technical subjects to expand my understanding.  I am currently teaching a three month immersive Data Science experience at General Assembly, but am always looking for exciting new opportunities.
 
-### Interests
+### Current Interests
 
  - Programming
- - Podcasts
+ - Tech Podcasts
  - Nuclear Technologies
- - Cybersecurity
  - Fitness
  - General Assembly DSI
 
 ### Contact me
 
-[blomadam@gmail.com](mailto:blomadam@gmail.com)
+[Email: blomadam@gmail.com](mailto:blomadam@gmail.com?subject=&body=)
+[SMS me: +1(509)539-0603](sms:+3531123456789?body=This+text+will+pre-populate+the+SMS+body)
+[Call me: +1(509)539-0603](tel:+15095390603)
+
+
+mailto:miranda@yourcompany.com?bcc=eventsteam@yourcompany.com&subject=Excited%20to%20meet%20at%20the%20event!&body=Hi%20Miranda,
+

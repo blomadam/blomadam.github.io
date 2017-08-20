@@ -1,7 +1,6 @@
 ---
 layout: home
 paginate: true
-alt_title: "Adam Blomberg, PhD"
 sub_title: "Data Science in NYC"
 
 introduction: |
