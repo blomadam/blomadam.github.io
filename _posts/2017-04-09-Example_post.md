@@ -1107,7 +1107,7 @@ df.plot(y=[3,5]);
 ```
 
 
-![png](../images/Example_post_files/Example_post_4_0.png)
+![png](/images/Example_post_files/Example_post_4_0.png)
 
 
 ### Equations are not so great... 
@@ -1115,7 +1115,7 @@ df.plot(y=[3,5]);
 $\alpha = \frac{d}{dx}e^{-x}$
 
 ### Attempt to include a picture from another location (looks great in original notebook):
-![png](../images/Math.png)
+![png](/images/Math.png)
 
 ### Attempt to include a picture via drag and drop:
 ![Rate.png](attachment:Rate.png)
