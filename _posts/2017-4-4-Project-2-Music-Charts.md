@@ -4,6 +4,7 @@ title: Project 2 - Music Charts
 date: 2017-04-04
 published: true
 categories: projects
+image: /images/project2/resurgent_tracks.png
 ---
 
 This week I am looking at the Billboard top 100 most popular songs from 
