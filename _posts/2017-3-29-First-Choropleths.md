@@ -31,9 +31,9 @@ Now you can drag the variable you want into the **Color** card to make the heat 
 
 
 
-![](../images/project1/Rate.png)
-![](../images/project1/Math.png)
-![](../images/project1/Verbal.png)
+![](/images/project1/Rate.png)
+![](/images/project1/Math.png)
+![](/images/project1/Verbal.png)
 
 
 

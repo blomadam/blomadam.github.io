@@ -731,8 +731,8 @@ city_df.to_csv("cities.csv")
 I also used these files to create some maps to visualize the data.
 
 
-![png](../images/project4/Mean.png)
+![png](/images/project4/Mean.png)
 
-![png](../images/project4/Size_count.png)
+![png](/images/project4/Size_count.png)
 
-![png](../images/project4/Size.png)
+![png](/images/project4/Size.png)

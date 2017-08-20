@@ -251,7 +251,7 @@ df[df['salary'].notnull()].boxplot(column="salary", by="search_city",figsize=(14
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_10_1.png)
+![png](/images/project-4-analysis_files/project-4-analysis_10_1.png)
 
 
 
@@ -260,7 +260,7 @@ boxplot_sorted(df[df['salary'].notnull()], by="search_city", column="salary")
 ```
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_11_0.png)
+![png](/images/project-4-analysis_files/project-4-analysis_11_0.png)
 
 
 
@@ -269,7 +269,7 @@ boxplot_sorted(df[df['salary'].notnull()], by="state", column="salary")
 ```
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_12_0.png)
+![png](/images/project-4-analysis_files/project-4-analysis_12_0.png)
 
 
 
@@ -669,99 +669,99 @@ for i in df.state.unique():
 ```
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_0.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_0.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_1.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_1.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_2.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_2.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_3.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_3.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_4.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_4.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_5.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_5.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_6.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_6.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_7.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_7.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_8.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_8.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_9.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_9.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_10.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_10.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_11.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_11.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_12.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_12.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_13.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_13.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_14.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_14.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_15.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_15.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_16.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_16.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_17.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_17.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_18.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_18.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_19.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_19.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_20.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_20.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_21.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_21.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_22.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_22.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_15_23.png)
+![png](/images/project-4-analysis_files/project-4-analysis_15_23.png)
 
 
 
@@ -820,19 +820,19 @@ df.pivot_table(index=["search_city"], values=["reviews","ratings","salary"], \
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_18_1.png)
+![png](/images/project-4-analysis_files/project-4-analysis_18_1.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_18_2.png)
+![png](/images/project-4-analysis_files/project-4-analysis_18_2.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_18_3.png)
+![png](/images/project-4-analysis_files/project-4-analysis_18_3.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_18_4.png)
+![png](/images/project-4-analysis_files/project-4-analysis_18_4.png)
 
 
 
@@ -855,19 +855,19 @@ df.pivot_table(index=["state"], values=["reviews","ratings","salary"], \
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_19_1.png)
+![png](/images/project-4-analysis_files/project-4-analysis_19_1.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_19_2.png)
+![png](/images/project-4-analysis_files/project-4-analysis_19_2.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_19_3.png)
+![png](/images/project-4-analysis_files/project-4-analysis_19_3.png)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_19_4.png)
+![png](/images/project-4-analysis_files/project-4-analysis_19_4.png)
 
 
 
@@ -907,7 +907,7 @@ pd.scatter_matrix(df,alpha=0.1)
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_20_1.png)
+![png](/images/project-4-analysis_files/project-4-analysis_20_1.png)
 
 
 ### Define tiers of locations containing roughly 50 salary entries each
@@ -1643,7 +1643,7 @@ abs_coeffs.sort_values("coeff",ascending=False).head(25).plot(kind="bar",figsize
 
 
 
-![png](../images/project-4-analysis_files/project-4-analysis_46_1.png)
+![png](/images/project-4-analysis_files/project-4-analysis_46_1.png)
 
 
 

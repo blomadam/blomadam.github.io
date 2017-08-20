@@ -1904,7 +1904,7 @@ plt.show()
 ```
 
 
-![png](../images/apis-lab-starter-code_files/apis-lab-starter-code_46_0.png)
+![png](/images/apis-lab-starter-code_files/apis-lab-starter-code_46_0.png)
 
 
 
@@ -1917,7 +1917,7 @@ plt.show()
 ```
 
 
-![png](../images/apis-lab-starter-code_files/apis-lab-starter-code_47_0.png)
+![png](/images/apis-lab-starter-code_files/apis-lab-starter-code_47_0.png)
 
 
 # Summary

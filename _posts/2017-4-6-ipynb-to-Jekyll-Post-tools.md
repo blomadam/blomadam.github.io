@@ -75,7 +75,7 @@ function new_post {
     jupyter nbconvert --to markdown $FILE_NAME
 
     # change image paths
-    sed -i .bak "s:\[png\](:[png](../images/:" $POST_NAME
+    sed -i .bak "s:\[png\](:[png](/images/:" $POST_NAME
 
     # move everything to blog area
     mv  $POST_NAME "${POST_PATH}/${POST_DATE_NAME}"

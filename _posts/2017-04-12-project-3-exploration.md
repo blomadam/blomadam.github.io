@@ -1544,7 +1544,7 @@ sns.heatmap(correl);
 ```
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_18_0.png)
+![png](/images/project-3-exploration_files/project-3-exploration_18_0.png)
 
 
 
@@ -1556,55 +1556,55 @@ for i in avail_columns:
 ```
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_0.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_0.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_1.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_2.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_2.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_3.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_3.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_4.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_4.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_5.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_5.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_6.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_6.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_7.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_7.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_8.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_8.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_9.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_9.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_10.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_10.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_11.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_11.png)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_19_12.png)
+![png](/images/project-3-exploration_files/project-3-exploration_19_12.png)
 
 
 ## Explore nonlinear relationships
@@ -1624,7 +1624,7 @@ plt.scatter(df.OverallQual**2,df.SalePrice)
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_21_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_21_1.png)
 
 
 
@@ -1784,7 +1784,7 @@ plt.ylabel("best R^2")
     <matplotlib.text.Text at 0x11913b210>
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_27_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_27_1.png)
 
 
 
@@ -1797,7 +1797,7 @@ plt.ylabel("Abs sum of coeffs")
     <matplotlib.text.Text at 0x117e66550>
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_28_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_28_1.png)
 
 
 
@@ -1810,7 +1810,7 @@ plt.ylabel("MSE")
     <matplotlib.text.Text at 0x11934af50>
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_29_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_29_1.png)
 
 
 
@@ -1844,7 +1844,7 @@ sns.heatmap(correl);
 ```
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_32_0.png)
+![png](/images/project-3-exploration_files/project-3-exploration_32_0.png)
 
 
 ## Neighborhood summary
@@ -1869,7 +1869,7 @@ df.SalePrice.hist(bins=20)
     <matplotlib.axes._subplots.AxesSubplot at 0x1178356d0>
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_34_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_34_1.png)
 
 
 
@@ -1880,7 +1880,7 @@ df.boxplot(column="SalePrice", by="Neighborhood",figsize=(14,8),rot=90,fontsize=
     <matplotlib.axes._subplots.AxesSubplot at 0x1182aa550>
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_35_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_35_1.png)
 
 
 
@@ -2231,7 +2231,7 @@ df.pivot_table(index=["Neighborhood"], values=["SalePrice"], \
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_39_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_39_1.png)
 
 
 
@@ -2249,7 +2249,7 @@ df.pivot_table(index=["YrSold"], values=["SalePrice"], \
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_40_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_40_1.png)
 
 
 
@@ -2507,5 +2507,5 @@ df.pivot_table(index=["YrSold"], values=["SalePrice"], columns=["Neighborhood"],
 
 
 
-![png](../images/project-3-exploration_files/project-3-exploration_42_1.png)
+![png](/images/project-3-exploration_files/project-3-exploration_42_1.png)
 

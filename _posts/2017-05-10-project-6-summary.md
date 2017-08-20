@@ -55,7 +55,7 @@ plt.show()
 ```
 
 
-![png](../images/project-6-summary_files/project-6-summary_2_0.png)
+![png](/images/project-6-summary_files/project-6-summary_2_0.png)
 
 
 #### Important features
@@ -178,7 +178,7 @@ plt.show()
 
 
 
-![png](../images/project-6-summary_files/project-6-summary_7_1.png)
+![png](/images/project-6-summary_files/project-6-summary_7_1.png)
 
 
 #### Feature importances
