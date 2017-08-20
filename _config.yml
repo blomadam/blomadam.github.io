@@ -16,11 +16,11 @@
 lang: en-US
 title: Data Science in NYC
 email: blomadam@gmail.com
-description: Data Scientist in NYC
+description: Adam Blomberg, PhD
 baseurl: # the optional subpath of your site, e.g. "/blog"
 url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 author:
-  name: Adam Blomberg, PhD
+  name: Adam Blomberg
   twitter: blomadam
   linkedin: blomadam
   picture: https://avatars2.githubusercontent.com/u/6401316?v=3&s=460
