@@ -1,6 +1,6 @@
 ---
 layout: home
-paginate: true
+paginate: false
 sub_title: "Data Science in NYC"
 
 introduction: |
