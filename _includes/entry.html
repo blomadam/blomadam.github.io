@@ -14,7 +14,7 @@
 
             {% if foundImage == 0 %}
                 {% assign html = image | split:"/>" | first %}
-                <img {{ html }} />
+                <img {{ html }} style="width:160px;height:120px;"/>
                 {% assign foundImage = 1 %}
             {% endif %}
         {% endif %}
