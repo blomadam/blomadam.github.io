@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Notebook conversion example
-# date: 2017-04-08
 published: true
 categories: tutorials
 image: /images/Example_post_files/Example_post_4_0.png
