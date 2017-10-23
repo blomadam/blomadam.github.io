@@ -7,6 +7,9 @@
 <article class="entry">
   <header class="entry-header">
     <h3 class="entry-title">
+      <table>
+        <tr>
+          <td>
       {% assign foundImage = 0 %}
       {% assign images = post.content | split:"<img " %}
       {% for image in images %}
@@ -14,12 +17,19 @@
 
             {% if foundImage == 0 %}
                 {% assign html = image | split:"/>" | first %}
-                <img {{ html }} style="width:160px;height:120px;"/>
+                <a href="{{ post.url | relative_url }}" rel="bookmark">
+                  <img {{ html }} style="width:160px;height:120px;"/>
+                </a>
                 {% assign foundImage = 1 %}
             {% endif %}
         {% endif %}
       {% endfor %}
+    </td>
+    <td>
       <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
+    </td>
+  </tr>
+</table>
     </h3>
   </header>
   <footer class="entry-meta">
