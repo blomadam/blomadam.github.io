@@ -12,7 +12,7 @@
           <td style="width:162px">
               {%if post.date %}
                 <a href="{{ post.url | relative_url }}" rel="bookmark">
-                  <img {{ post.image }} style="width:160px;height:120px;"/>
+                  <img scr="{{ post.image }}" style="width:160px;height:120px;"/>
                 </a>
                 {% endif %}
 
