@@ -10,20 +10,12 @@
       <table>
         <tr>
           <td style="width:162px">
-      {% assign foundImage = 0 %}
-      {% assign images = post.content | split:"<img " %}
-      {% for image in images %}
-        {% if image contains 'src' %}
-
-            {% if foundImage == 0 %}
-                {% assign html = image | split:"/>" | first %}
+              {%if post.date %}
                 <a href="{{ post.url | relative_url }}" rel="bookmark">
-                  <img {{ html }} style="width:160px;height:120px;"/>
+                  <img {{ post.image }} style="width:160px;height:120px;"/>
                 </a>
-                {% assign foundImage = 1 %}
-            {% endif %}
-        {% endif %}
-      {% endfor %}
+                {% endif %}
+
     </td>
     <td>
       <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
