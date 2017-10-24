@@ -10,9 +10,9 @@
       <table>
         <tr>
           <td style="width:162px">
-              {%if post.date %}
+              {%if page.image %}
                 <a href="{{ post.url | relative_url }}" rel="bookmark">
-                  <img scr="{{ post.image }}" style="width:160px;height:120px;"/>
+                  <img scr="{{ page.image.path }}" style="width:160px;height:120px;"/>
                 </a>
                 {% endif %}
 
