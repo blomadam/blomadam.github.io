@@ -4,7 +4,7 @@ title: Custom choropleths in Tableau
 date: 2017-03-29
 published: true
 categories: tutorials
-image: image: /images/project_1_files/Math.png
+image: /images/project_1_files/Math.png
 ---
 
 We worked with some data about SAT scores and test taking rates in every state over the last week.  I was able to use Tableau with some custom mapping options to keep the image looking professional.
