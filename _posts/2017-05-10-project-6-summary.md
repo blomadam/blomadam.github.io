@@ -71,7 +71,7 @@ pd.DataFrame(zip(X_train.columns,randforest_gs.best_estimator_.steps[1][1].featu
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
