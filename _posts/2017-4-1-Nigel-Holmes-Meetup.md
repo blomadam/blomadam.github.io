@@ -2,6 +2,7 @@
 layout: post
 title: Data viz. meetup with Nigel Holmes
 categories: Networking
+published: false
 ---
 
 On Monday night I attended a Meetup at the Ebay headquarters hosted by Data Visualization New York (and Naomi Robbins, particularly).
