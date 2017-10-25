@@ -1,14 +1,16 @@
 ---
 layout: post
 title: Project 2 - Music Charts
-date: 2017-04-04
+date: 2017-10-04
 published: true
 categories: projects
 image: /images/project2/resurgent_tracks.png
 ---
 
-This week I am looking at the Billboard top 100 most popular songs from 
-the year 2000.  As with any project, I followed the following steps during my analysis:
+Recently, I took a look at the Billboard top 100 most popular songs from 
+the year 2000.  The bulk of this dataset was a series of columns containing each song's rank in the charts each week after it entered.  In the process of cleaning this up and condensing the data into a single column, I came across some interesting trajectory templates: "fads," "smash hits," and "resurgent hits." 
+
+As with any project, I followed these steps during my analysis:
 
 1. Understand the structure of your data set
 2. Clean and transform your data set
