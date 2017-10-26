@@ -4,18 +4,10 @@ title: Housing Prices Project
 date: 2017-04-12
 published: true
 categories: projects
-tags:
+image: /images/project-3-exploration_files/project-3-exploration_27_1.png
 ---
 
-# Overview
-
-## Problem Statement
-
-We have a data set of real estate prices from Aimes, Iowa.  Our goal is to provide a model to predict prices using a subset of the columns to be able to reduce the size of the database the company is required to store.
-
-We are also interested in providing descriptive statistics for the market, specifically which neighborhoods have many sales and high prices.  Finally, we are interested in describing how this data has changed over time.
-
-Our deliverables will include a predictive model, an estimate of its value, and a brief summary of the neighborhood data.
+We have a data set of real estate prices from Aimes, Iowa.  Our goal is to provide a model to predict prices using a subset of the columns to be able to reduce the size of the database the company is required to store.  We are also interested in providing descriptive statistics for the market, specifically which neighborhoods have many sales and high prices.  Finally, we are interested in describing how this data has changed over time.
 
 
 ## Results summary
@@ -1444,45 +1436,6 @@ df['YrSold'].describe()
 
 
 ```python
-df.Utilities.value_counts()
-```
-    AllPub    1459
-    NoSeWa       1
-    Name: Utilities, dtype: int64
-
-
-```python
-df.Neighborhood.value_counts()
-```
-    NAmes      225
-    CollgCr    150
-    OldTown    113
-    Edwards    100
-    Somerst     86
-    Gilbert     79
-    NridgHt     77
-    Sawyer      74
-    NWAmes      73
-    SawyerW     59
-    BrkSide     58
-    Crawfor     51
-    Mitchel     49
-    NoRidge     41
-    Timber      38
-    IDOTRR      37
-    ClearCr     28
-    SWISU       25
-    StoneBr     25
-    MeadowV     17
-    Blmngtn     17
-    BrDale      16
-    Veenker     11
-    NPkVill      9
-    Blueste      2
-    Name: Neighborhood, dtype: int64
-
-
-```python
 df.BldgType.value_counts()
 ```
     1Fam      1220
@@ -1491,46 +1444,6 @@ df.BldgType.value_counts()
     Twnhs       43
     2fmCon      31
     Name: BldgType, dtype: int64
-
-
-```python
-df.HouseStyle.value_counts()
-```
-    1Story    726
-    2Story    445
-    1.5Fin    154
-    SLvl       65
-    SFoyer     37
-    1.5Unf     14
-    2.5Unf     11
-    2.5Fin      8
-    Name: HouseStyle, dtype: int64
-
-
-```python
-df.RoofStyle.value_counts()
-```
-    Gable      1141
-    Hip         286
-    Flat         13
-    Gambrel      11
-    Mansard       7
-    Shed          2
-    Name: RoofStyle, dtype: int64
-
-
-```python
-df.RoofMatl.value_counts()
-```
-    CompShg    1434
-    Tar&Grv      11
-    WdShngl       6
-    WdShake       5
-    Membran       1
-    Metal         1
-    ClyTile       1
-    Roll          1
-    Name: RoofMatl, dtype: int64
 
 
 
@@ -1556,15 +1469,8 @@ for i in avail_columns:
 ```
 
 
-![png](/images/project-3-exploration_files/project-3-exploration_19_0.png)
-
-
 
 ![png](/images/project-3-exploration_files/project-3-exploration_19_1.png)
-
-
-
-![png](/images/project-3-exploration_files/project-3-exploration_19_2.png)
 
 
 
@@ -1583,28 +1489,6 @@ for i in avail_columns:
 ![png](/images/project-3-exploration_files/project-3-exploration_19_6.png)
 
 
-
-![png](/images/project-3-exploration_files/project-3-exploration_19_7.png)
-
-
-
-![png](/images/project-3-exploration_files/project-3-exploration_19_8.png)
-
-
-
-![png](/images/project-3-exploration_files/project-3-exploration_19_9.png)
-
-
-
-![png](/images/project-3-exploration_files/project-3-exploration_19_10.png)
-
-
-
-![png](/images/project-3-exploration_files/project-3-exploration_19_11.png)
-
-
-
-![png](/images/project-3-exploration_files/project-3-exploration_19_12.png)
 
 
 ## Explore nonlinear relationships
@@ -1659,33 +1543,23 @@ for n in range(1,len(features)+1):
     max_r2 = 0
     best_features = []
     for cols in itertools.combinations(features, n):
-#        print cols
-#        break
         fit_xtrain = X_train[list(cols)]
-        fit_ytrain = y_train
-        fit_xtest = X_test[list(cols)]
-        fit_ytest = y_test
-        
-        #print list(cols)
-#        print fit_ytrain.head()
+        fit_xtest = X_test[list(cols)]        
 
 #FIT LINEAR MODEL
         line = lm.LinearRegression(normalize=True)
-        #lasso = lm.LassoCV(normalize=True)
-        #ridge = lm.RidgeCV(normalize=True)
 
 #for algorithm in [line, lasso, ridge]:
         for algorithm in [line]:
-            #print type(algorithm)
             ## Fit model to data
-            model = algorithm.fit(fit_xtrain,fit_ytrain)
+            model = algorithm.fit(fit_xtrain,y_train)
 
-            test_r2 = algorithm.score(fit_xtest, fit_ytest)
+            test_r2 = algorithm.score(fit_xtest, y_test)
 #             print "Test r2 score : {}".format(test_r2);
             if test_r2 > max_r2:
                 max_r2 = test_r2
                 coeff_sum = abs(algorithm.coef_).mean()
-                mse = mean_squared_error(y_true=fit_ytest, y_pred=algorithm.predict(fit_xtest))
+                mse = mean_squared_error(y_true=y_test, y_pred=algorithm.predict(fit_xtest))
                 best_features = list(cols)
     results.append( (max_r2,coeff_sum, mse, best_features))
 results
@@ -1775,18 +1649,17 @@ results
 
 
 
+Plot the progression of the best coefficient of determination as the number of features selected grows.
+
 ```python
 plt.plot(range(1,len(results)+1),[r[0] for r in results])
 plt.xlabel("number of features")
 plt.ylabel("best R^2")
 ```
 
-    <matplotlib.text.Text at 0x11913b210>
-
-
 ![png](/images/project-3-exploration_files/project-3-exploration_27_1.png)
 
-
+Plot the absolute sum of the coefficients.  Note that this only works when the features are normalized in some fashion before fitting.  A significant increase in this sum is an indication of the model being overfit.  Comparing this to the difference in R2 score would make a good cross check for overfitting.
 
 ```python
 plt.plot(range(1,len(results)+1),[r[1] for r in results])
@@ -1794,12 +1667,10 @@ plt.xlabel("number of features")
 plt.ylabel("Abs sum of coeffs")
 ```
 
-    <matplotlib.text.Text at 0x117e66550>
-
-
 ![png](/images/project-3-exploration_files/project-3-exploration_28_1.png)
 
 
+Plot the best mean squared error (MSE) for each number of features corresponding to the best R2 score.
 
 ```python
 plt.plot(range(1,len(results)+1),[r[2] for r in results])
@@ -1807,12 +1678,10 @@ plt.xlabel("number of features")
 plt.ylabel("MSE")
 ```
 
-    <matplotlib.text.Text at 0x11934af50>
-
-
 ![png](/images/project-3-exploration_files/project-3-exploration_29_1.png)
 
 
+Compare the be R2 score with a value from near the point of diminishing R2 returns.
 
 ```python
 print max([r[0] for r in results])
