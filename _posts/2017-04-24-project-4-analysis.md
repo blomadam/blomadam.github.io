@@ -1,4 +1,11 @@
-
+---
+layout: post
+title: US Salary Summary Predictions
+date: 2017-04-23
+published: false
+categories: projects
+image: /images/project4/Size.png
+---
 
 ```python
 import pandas as pd
@@ -29,7 +36,7 @@ df.head()
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -145,7 +152,7 @@ df.describe()
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -282,7 +289,7 @@ df[df['salary'].notnull()].pivot_table(index=["search_city"], values=["salary"],
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr>
       <th></th>
@@ -1051,7 +1058,7 @@ X_train[X_train.isnull()].head()
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1383,7 +1390,7 @@ pd.DataFrame(confusion_matrix(y_train, model.predict(X_train)),columns=["Low","H
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1429,7 +1436,7 @@ pd.DataFrame(confusion_matrix(y_train, model2.predict(X_train)),columns=["Low","
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>

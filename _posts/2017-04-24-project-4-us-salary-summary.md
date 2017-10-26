@@ -4,36 +4,26 @@ title: US Salary Summary
 date: 2017-04-23
 published: true
 categories: projects
-tags:
+image: /images/project4/Size.png
 ---
+
+
+Indeed has published Data Scientist salary information on [their site](https://www.indeed.com/salaries/Data-Scientist-Salaries).  The publish data averaged over the entire country, for many (~35) individual states, and for several cities in each of those states.  I am looping over each page in their location list to collect information on the salary average and range and an indication of the size of the market in each location.
+
 
 ```python
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-```
 
-## Collect salary summary info from Indeed statistics pages
-Indeed has published Data Scientist salary information on [their site](https://www.indeed.com/salaries/Data-Scientist-Salaries).  The publish data averaged over the entire country, for many (~35) individual states, and for several cities in each of those states.  I am looping over each page in their location list to collect information on the salary average and range and an indication of the size of the market in each location.
-
-
-```python
 URL = "https://www.indeed.com/salaries/Data-Scientist-Salaries"
-```
 
-
-```python
 res = requests.get(URL)
 page_source = BeautifulSoup(res.content,"lxml")
 ```
 
 
-```python
-#print page_source.prettify()
-```
-
 ### Example market size extraction
-
 
 ```python
 USA_respondents = int(page_source.find('div', class_="cmp-salary-header-content").text.split()[3].replace(",",""))
@@ -54,20 +44,15 @@ state_URLs = [i.attrs['value'] for i in state_list]
 state_URLs[:3]
 ```
 
-
-
-
     ['/salaries/Data-Scientist-Salaries,-Arizona',
      '/salaries/Data-Scientist-Salaries,-Arkansas',
      '/salaries/Data-Scientist-Salaries,-California']
 
 
-
-
 ```python
 city_list = page_source.findAll('option', {'data-tn-element':"loc_city[]"})
 city_URLs = [i.attrs['value'] for i in city_list]
-city_URLs[:13]
+city_URLs[:13]  # to show several states
 ```
 
 
@@ -258,7 +243,7 @@ city_df.head(5)
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -364,7 +349,7 @@ cities_money.head(10)
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -493,7 +478,7 @@ cities_jobs.head(10)
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -623,90 +608,7 @@ cities_to_search.drop_duplicates(inplace=True)
      'Palo+Alto%2C+CA',
      'San+Jose%2C+CA',
      'Redwood+City%2C+CA',
-     'Washington%2C+DC',
-     'Marlborough%2C+MA',
-     'Mountain+View%2C+CA',
-     'Sunnyvale%2C+CA',
-     'Los+Angeles%2C+CA',
-     'Seattle%2C+WA',
-     'San+Mateo%2C+CA',
-     'Berkeley%2C+CA',
-     'Salt+Lake+City%2C+UT',
-     'McLean%2C+VA',
-     'Austin%2C+TX',
-     'Atlanta%2C+GA',
-     'Culver+City%2C+CA',
-     'Natick%2C+MA',
-     'Portland%2C+OR',
-     'Redmond%2C+WA',
-     'Santa+Monica%2C+CA',
-     'San+Diego%2C+CA',
-     'Dallas%2C+TX',
-     'Irvine%2C+CA',
-     'Denver%2C+CO',
-     'Jersey+City%2C+NJ',
-     'Raleigh%2C+NC',
-     'Bellevue%2C+WA',
-     'Houston%2C+TX',
-     'Sherman+Oaks%2C+CA',
-     'Menlo+Park%2C+CA',
-     'St.+Louis%2C+MO',
-     'Pasadena%2C+CA',
-     'Manhattan%2C+NY',
-     'Santa+Clara%2C+CA',
-     'Philadelphia%2C+PA',
-     'Carlsbad%2C+CA',
-     'Newton%2C+MA',
-     'Fort+George+G+Meade%2C+MD',
-     'Venice%2C+CA',
-     'Detroit%2C+MI',
-     'Marina+del+Rey%2C+CA',
-     'Schaumburg%2C+IL',
-     'Pittsburgh%2C+PA',
-     'Los+Gatos%2C+CA',
-     'San+Ramon%2C+CA',
-     'South+Plainfield%2C+NJ',
-     'Los+Gatos%2C+CA',
-     'Roland%2C+OK',
-     'Manhattan%2C+NY',
-     'South+Hackensack%2C+NJ',
-     'Marina+del+Rey%2C+CA',
-     'South+San+Francisco%2C+CA',
-     'Philadelphia%2C+NY',
-     'West+Hollywood%2C+CA',
-     'San+Francisco+Bay+Area%2C+CA',
-     'Schaumburg%2C+IL',
-     'Midland%2C+TX',
-     'Redwood+City%2C+CA',
-     'Port+Washington%2C+NY',
-     'Belmont%2C+CA',
-     'Phoenix%2C+AZ',
-     'Cupertino%2C+CA',
-     'Henderson%2C+NV',
-     'Costa+Mesa%2C+CA',
-     'Downers+Grove%2C+IL',
-     'San+Carlos%2C+CA',
-     'Overland+Park%2C+KS',
-     'Sunnyvale%2C+CA',
-     'Deerfield+Beach%2C+FL',
-     'Culver+City%2C+CA',
-     'Santa+Monica%2C+CA',
-     'Berkeley%2C+CA',
-     'Chevy+Chase%2C+MD',
-     'Mountain+View%2C+CA',
-     'San+Bruno%2C+CA',
-     'Palo+Alto%2C+CA',
-     'San+Ramon%2C+CA',
-     'Bend%2C+OR',
-     'San+Jose%2C+CA',
-     'Torrance%2C+CA',
-     'Campbell%2C+CA',
-     'Hawthorne%2C+NJ',
-     'Hoffman+Estates%2C+IL',
-     'Bedford%2C+MA',
-     'San+Mateo%2C+CA',
-     'Watertown%2C+MA',
-     'Santa+Clara%2C+CA',
+     .... abbreviated ....
      'Renton%2C+WA',
      'Portland%2C+OR',
      'San+Francisco%2C+CA',

@@ -1,12 +1,11 @@
 ---
 layout: post
-title: Prediction successful movies on IMDB
+title: Predicting successful movies on IMDB
 date: 2017-05-10
 published: true
 categories: projects
-tags:
+image: /images/project-6-summary_files/project-6-summary_2_0.png
 ---
-# Predicting movie success from IMDB metrics
 
 To help better assess which movies to bring into the Netflix streaming catalog, I have pulled data for the best and worst movies in the IMDB database and created two models from that data to predict ratings for other movies.  A total of 350 records were downloaded: the top 250, and the bottom 100.
 
@@ -34,6 +33,51 @@ I collected data from both the IMDB website and the OMDB API, including columns 
 - Year
 
 Many of the columns (Plot and Actors, for example) were parsed for key word entries.  I kept up to 50 terms from each key word search, and created new features recording the presence of those key words and the column it was found in (e.g. "director_sidney lumet" and "country_france").
+
+### Feature Engineerings
+
+```python
+v = CountVectorizer(
+            binary= True,
+            token_pattern= u'(?u)\w+.?\w?.? \w+',
+            max_features=50
+    )
+data = v.fit_transform(X.Actors).todense()
+names = v.get_feature_names()
+
+temp_df = pd.DataFrame(data,columns=names)
+
+for i in temp_df.columns:
+    X.insert(len(X.columns)-1,"actor_"+i,temp_df[i].values)
+     
+
+
+v = CountVectorizer(
+        binary= True,
+        token_pattern= '(?u)\w+.?\w+',
+        max_features=50
+    )
+data = v.fit_transform(X.Country).todense()
+names = v.get_feature_names()
+
+temp_df = pd.DataFrame(data,columns=names)
+
+for i in temp_df.columns:
+    X.insert(len(X.columns)-1,"country_"+i,temp_df[i].values)
+    
+v = CountVectorizer(
+            binary= True,
+            max_features=50
+    )
+data = v.fit_transform(X.Plot).todense()
+names = v.get_feature_names()
+
+temp_df = pd.DataFrame(data,columns=names)
+
+for i in temp_df.columns:
+    X.insert(len(X.columns)-1,"plot_"+i,temp_df[i].values)   
+```
+
 
 ### Regression model
 #### Performance

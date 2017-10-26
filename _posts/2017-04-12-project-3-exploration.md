@@ -41,7 +41,7 @@ print df
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -1565,81 +1565,26 @@ for n in range(1,len(features)+1):
 results
 ```
 
-    [(0.64493256596024184,
-      3738.6815185367077,
-      2186715449.1880145,
+    [(0.64493256596024184,  3738.6815185367077,  2186715449.1880145,
       ['OverallQualSquared']),
-     (0.72915774869635741,
-      1444.2671637627586,
-      1668006914.8561254,
+     (0.72915774869635741,  1444.2671637627586,  1668006914.8561254,
       ['GrLivArea', 'OverallQualSquared']),
-     (0.75483471919634171,
-      939.9441940699586,
-      1509872930.4412842,
+     (0.75483471919634171,   939.9441940699586,  1509872930.4412842,
       ['YearBuilt', 'GrLivArea', 'OverallQualSquared']),
-     (0.76673809598507581,
-      713.46071202706855,
-      1436564889.6973503,
-      ['LotArea', 'YearBuilt', 'GrLivArea', 'OverallQualSquared']),
-     (0.77681547098944359,
-      10050.69164125206,
-      1374502448.8854885,
-      ['LotArea', 'OverallQual', 'YearBuilt', 'GrLivArea', 'OverallQualSquared']),
-     (0.79010957401318027,
-      12257.811452486383,
-      1292629492.7138808,
-      ['LotArea',       'OverallQual',       'OverallCond',
-       'YearBuilt',       'GrLivArea',       'OverallQualSquared']),
-     (0.79432162376193627,
-      12698.291873405064,
-      1266689196.9408765,
-      ['LotArea',       'OverallQual',       'OverallCond',
-       'YearBuilt',       'GrLivArea',       'KitchenAbvGr',
-       'OverallQualSquared']),
-     (0.79589913657403477,
-      12011.917742913709,
-      1256973939.1988173,
+     (0.79589913657403477,  12011.917742913709,  1256973939.1988173,
       ['LotArea',       'OverallQual',       'OverallCond',
        'YearBuilt',       'GrLivArea',       'HalfBath',
        'KitchenAbvGr',       'OverallQualSquared']),
-     (0.79640356966477699,
-      10782.082461790924,
-      1253867341.6152034,
+     (0.79640356966477699,  10782.082461790924,  1253867341.6152034,
       ['LotArea',       'OverallQual',       'OverallCond',
        'YearBuilt',       'GrLivArea',       'HalfBath',
        'BedroomAbvGr',       'KitchenAbvGr',       'OverallQualSquared']),
-     (0.79670268601380689,
-      9925.112054464651,
-      1252025206.0690444,
+     (0.79670268601380689,  9925.112054464651,  1252025206.0690444,
       ['LotArea',       'OverallQual',       'OverallCond',
        'YearBuilt',       'GrLivArea',       'FullBath',
        'HalfBath',       'BedroomAbvGr',       'KitchenAbvGr',
        'OverallQualSquared']),
-     (0.79676710539749784,
-      9031.8666018077784,
-      1251628473.3697336,
-      ['LotArea',       'OverallQual',       'OverallCond',
-       'YearBuilt',       'GrLivArea',       'FullBath',
-       'HalfBath',       'BedroomAbvGr',       'KitchenAbvGr',
-       'YrSold',       'OverallQualSquared']),
-     (0.79679435921839925,
-      8266.0264451278636,
-      1251460628.2070935,
-      ['LotArea',       'OverallQual',       'OverallCond',
-       'YearBuilt',       'YearRemodAdd',       'GrLivArea',
-       'FullBath',       'HalfBath',       'BedroomAbvGr',
-       'KitchenAbvGr',       'YrSold',       'OverallQualSquared']),
-     (0.79655485059789011,
-      8153.346260142328,
-      1252935664.0748496,
-      ['LotArea',       'OverallQual',       'OverallCond',
-       'YearBuilt',       'YearRemodAdd',       'GrLivArea',
-       'FullBath',       'HalfBath',       'BedroomAbvGr',
-       'KitchenAbvGr',       'YrSold',       'OverallQualSquared',
-       'YearBuiltSquared']),
-     (0.79624488667288296,
-      7607.3176169180288,
-      1254844605.4153514,
+     (0.79624488667288296,  7607.3176169180288,  1254844605.4153514,
       ['LotArea',       'OverallQual',       'OverallCond',
        'YearBuilt',       'YearRemodAdd',       'GrLivArea',
        'FullBath',       'HalfBath',       'BedroomAbvGr',
@@ -1776,7 +1721,7 @@ df.pivot_table(index=["Neighborhood"], values=["SalePrice"], \
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr>
       <th></th>
@@ -1936,7 +1881,7 @@ df.pivot_table(index=["Neighborhood"], values=["SalePrice"], \
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr>
       <th></th>
@@ -2132,7 +2077,7 @@ df.pivot_table(index=["Neighborhood"], values=["SalePrice"], \
 
 
 <div>
-<table border="1" class="dataframe">
+<table border="0" class="dataframe">
   <thead>
     <tr>
       <th></th>
