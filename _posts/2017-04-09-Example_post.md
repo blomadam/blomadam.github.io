@@ -1116,7 +1116,7 @@ df.plot(y=[3,5]);
 $\alpha = \frac{d}{dx}e^{-x}$
 
 ### Attempt to include a picture from another location (looks great in original notebook):
-![png](/images/Math.png)
+![png](/images/project_1_files/Math.png)
 
 ### Attempt to include a picture via drag and drop:
 ![Rate.png](attachment:Rate.png)

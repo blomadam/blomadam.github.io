@@ -4,7 +4,6 @@ title: Post Jupyter notebooks to your GitHub blog
 date: 2017-04-09
 published: true
 categories: tutorials
-tags:
 ---
 
 
