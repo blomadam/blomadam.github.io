@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Project 2 - Music Charts
+title: Bilboard top music chart analysis
 date: 2017-10-04
 published: true
 categories: projects

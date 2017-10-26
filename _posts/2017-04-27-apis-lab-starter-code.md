@@ -4,10 +4,12 @@ title: Grid searching data pipelines for wine quality
 date: 2017-05-10
 published: true
 categories: projects
-image: /images/project-6-summary_files/project-6-summary_2_0.png
+image: /images/apis-lab-starter-code_files/apis-lab-starter-code_46_0.png
 ---
 
+I collected a small set of crowd sourced wine data from the web to show how pipelines and grid search can be used together to run data analysis while being careful not to leak information from the test set into the training data.
 
+##Load the data
 
 ```python
 data = response.json()  ## The data is in JSON format
@@ -170,13 +172,14 @@ df.head(10)
 </table>
 </div>
 
+## Split the data
 
 ```python
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test, = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
 
-
+## Set up classes for custom pipeline
 
 ```python
 class ModelTransformer(BaseEstimator,TransformerMixin):
@@ -221,6 +224,8 @@ class DenseTransformer(BaseEstimator,TransformerMixin):
         return self
 ```
 
+
+## Run data with KFolds cross validation
 
 ```python
 kf_shuffle = StratifiedKFold(n_splits=3,shuffle=True,random_state=777)
@@ -282,6 +287,8 @@ grid_search = GridSearchCV(pipeline, parameters, verbose=False, cv=kf_shuffle)
 ```
 
 
+## Execute the pipeline
+
 ```python
 print("Performing grid search...")
 print("pipeline:", [name for name, _ in pipeline.steps])
@@ -314,7 +321,7 @@ cv_pred = pd.Series(grid_search.predict(X_test))
 
 
 
-
+## Take a peek at the results
 
 
 ```python
@@ -428,6 +435,6 @@ plt.show()
 ![png](/images/apis-lab-starter-code_files/apis-lab-starter-code_47_0.png)
 
 
-# Summary
+## Results Summary
 I was able to run a grid search on the data, and found that two models fit the training data equally well.  When applied as a predictor on the test set, I get an R-squared value of 46.4%.  Looking at the plots, I seem to be over fit and predicting a wild outlier at the  right side.  There is also a linear pattern to my residuals from one model, but the small sample size makes it hard to predict if that is by chance.
 
