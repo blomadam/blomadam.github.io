@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Predicting successful movies on IMDB
-date: 2017-05-10
+date: 2017-04-22
 published: true
 categories: projects
 image: /images/project-6-summary_files/project-6-summary_2_0.png
