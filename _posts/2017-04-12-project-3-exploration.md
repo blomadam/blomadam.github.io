@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Housing Prices Project
+title: Housing market analysis
 date: 2017-04-12
 published: true
 categories: projects
-image: /images/project-3-exploration_files/project-3-exploration_27_1.png
+image: /images/project-3-exploration_files/project-3-exploration_28_1.png
 ---
 
 We have a data set of real estate prices from Aimes, Iowa.  Our goal is to provide a model to predict prices using a subset of the columns to be able to reduce the size of the database the company is required to store.  We are also interested in providing descriptive statistics for the market, specifically which neighborhoods have many sales and high prices.  Finally, we are interested in describing how this data has changed over time.
