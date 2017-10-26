@@ -6,6 +6,10 @@ published: true
 categories: tutorials
 image: /images/Example_post_files/Example_post_4_0.png
 ---
+
+A quick example of how the [conversion tool]({% post_url 2017-4-6-ipynb-to-Jekyll-Post-tools %}) can convert an Jupyter notebook into markdown files and associated images.  I demonstrate how common items like code blocks and inline images work well, while other features (namely Latex equations) do not.
+
+
 ### Quick overview
 ##### Things that work well:
 - Text in Markdown cells

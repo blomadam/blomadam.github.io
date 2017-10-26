@@ -2,20 +2,6 @@
 layout: home
 paginate: false
 sub_title: "Data Science in NYC"
-
-introduction: |
-  Basically Basic is a [Jekyll theme](https://jekyllrb.com/docs/themes/) meant as a substitute for the default --- [Minima](https://github.com/jekyll/minima). Conventions and features found there are fully supported by **Basically Basic**, with a few enhancements thrown in for good measure:
-
-  - Clean responsive design with six customizable skins
-  - Curriculum Vitæ/Resume layout powered by [JSON data](http://registry.jsonresume.org/)
-  - About page layout
-  - Disqus Comments and Google Analytics support
-  - SEO best practices via [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag/)
-actions:
-  - label: "Get Started"
-    icon: github
-    url: "https://github.com/mmistakes/jekyll-theme-basically-basic"
-  - label: "Download"
-    icon: download
-    url: "https://github.com/mmistakes/jekyll-theme-basically-basic/archive/master.zip"
 ---
+
+I'm a experimental nuclear physicist turned data scientist.  I have a history of using computer simulations for product and experimental optimizations.  I'm currently working at General Assembly in New York City, teaching their full-time Data Science Immersive focusing on machine learning in Python, statistics, and SQL.

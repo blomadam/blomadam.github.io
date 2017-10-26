@@ -6,6 +6,8 @@ published: true
 categories: tutorials
 ---
 
+Info to help convert the Jupyter notebooks we use in class into blog posts for your github blog.  Manual conversion instructions are given for one-off posts, as well as detials to make a bash alias to automate the conversion process, move the files, and update your blog in one fell swoop.
+
 
 ## Manual instructions
 
