@@ -22,5 +22,3 @@ I am a versatile scientist with a strong background in regression and experiment
 [Call me: +1(509)539-0603](tel:+15095390603)
 
 
-mailto:miranda@yourcompany.com?bcc=eventsteam@yourcompany.com&subject=Excited%20to%20meet%20at%20the%20event!&body=Hi%20Miranda,
-
