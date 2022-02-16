@@ -1,0 +1,49 @@
+{% if post.id %}
+  {% assign title = post.title | markdownify | strip_html %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<article class="entry">
+  <header class="entry-header">
+    <h3 class="entry-title">
+      <table>
+        <tr>
+          <td style="width:162px">
+  {% if post.image %}
+    {% assign intro_image = post.image.path | default: post.image %}
+    {% unless intro_image contains '://' %}
+      {% assign intro_image = intro_image | relative_url %}
+    {% endunless %}
+    {% assign intro_image = intro_image | escape %}
+        <a href="{{ post.url | relative_url }}" rel="bookmark">
+          <img src="{{ intro_image }}" style="width:160px;height:120px;" alt="{{ page.title }}"/>
+        </a>
+  {% endif %}
+
+    </td>
+    <td>
+      <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
+    </td>
+  </tr>
+</table>
+    </h3>
+  </header>
+  <footer class="entry-meta">
+    <ul>
+<!--    {% if post.date %}
+      <li><span class="icon">{% include icon-calendar.svg %}</span><time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></li>
+    {% endif %}
+-->
+    {% if post.read_time %}
+      <li><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</li>
+    {% endif %}
+    </ul>
+  </footer>
+  <div class="entry-excerpt">
+    {% if post.excerpt %}
+      {{ post.excerpt | markdownify }}
+      <p><a href="{{ post.url | relative_url }}" class="more-link">{{ site.data.theme.t.read_more | default: 'Read More' }} <span class="icon icon--arrow-right">{% include icon-arrow-right.svg %}</span></a></p>
+    {% endif %}
+  </div>
+</article>
