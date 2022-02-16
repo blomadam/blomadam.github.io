@@ -7,7 +7,7 @@ categories: projects
 image: /images/github_actions/badge_passed.png
 ---
 
-I created a repository to explore and document continuous development practices.  Most notably, I want to explore how automated testing using GitHub Actions (or similar) might be useful in my future data science projects.  I'll be automating tests in [pytest][pytest], flake8[flake8], and mypy[mypy] with [tox][tox], and also connecting to a protected database while ensuring private information is not published.
+I created a repository to explore and document continuous development practices.  Most notably, I want to explore how automated testing using GitHub Actions (or similar) might be useful in my future data science projects.  I'll be automating tests in [pytest][pytest], flake8[flake8], and [mypy][mypy] with [tox][tox], and also connecting to a protected database while ensuring private information is not published.
 
 ### Introduction
 The impetus for testing these options out came from a video I recently viewed on YouTube by mCoding (see [here][video]).
@@ -106,5 +106,5 @@ This project is rapidly consuming much of my free time, and there is a lot more 
 [CCDS]: https://drivendata.github.io/cookiecutter-data-science/
 [python_projects]: https://packaging.python.org/en/latest/tutorials/packaging-projects/
 [config_docs]: https://docs.python.org/3.9/library/configparser.html
-[dafe_keys]: https://gist.github.com/amelieykw/6116ca8ef7279206382a76fd790c1aa1
+[safe_keys]: https://gist.github.com/amelieykw/6116ca8ef7279206382a76fd790c1aa1
 [hashing]: https://stackoverflow.com/a/22058673/7862615
