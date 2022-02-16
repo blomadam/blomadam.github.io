@@ -1,21 +1,17 @@
 ---
 layout: default
-read_time: true
 ---
 
-{% include page-intro.html %}
+<article class="post">
+  <h1>{{ page.title }}</h1>
 
-<main id="main" class="page-content" aria-label="Content">
-  <div class="inner">
-    <article class="entry-wrap">
-      <div class="entry-content">
-        {{ content }}
-      </div>
-      {% if site.disqus.shortname %}
-        {% include disqus_comments.html %}
-      {% endif %}
-    </article>
-
-    {% include footer.html %}
+  <div class="entry">
+    {{ content }}
   </div>
-</main>
+
+  <div class="date">
+    Written on {{ page.date | date: "%B %e, %Y" }}
+  </div>
+
+  {% include disqus.html %}
+</article>

@@ -2,16 +2,11 @@
 layout: default
 ---
 
-{% include page-intro.html %}
+<article class="page">
 
-<main id="main" class="page-content" aria-label="Content">
-  <div class="inner">
-    <article class="entry-wrap">
-      <div class="entry-content">
-        {{ content }}
-      </div>
-    </article>
+  <h1>{{ page.title }}</h1>
 
-    {% include footer.html %}
+  <div class="entry">
+    {{ content }}
   </div>
-</main>
+</article>
