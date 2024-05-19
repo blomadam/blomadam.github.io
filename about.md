@@ -5,15 +5,15 @@ permalink: /about/
 ---
 
 ### General Information
-I am a versatile scientist with a strong background in regression and experimental design.  I welcome the challenge of explaining technical subjects to variety of audiences.  Similarly, I love discussing technical subjects to expand my understanding.  I am currently teaching a three month immersive Data Science experience at General Assembly, but am always looking for exciting new opportunities.
+I am a versatile scientist with a strong background in regression and experimental design.  I welcome the challenge of explaining technical subjects to variety of audiences.  Similarly, I love discussing technical subjects to expand my understanding.  I am currently working with the BakerML group at Baker McKenzie exploring how generative AI tools can be harnessed for legal applications.
 
 ### Current Interests
 
  - Programming
- - Tech Podcasts
+ - Cybersecurity
  - Nuclear Technologies
  - Fitness
- - General Assembly DSI
+ - Generative AI
 
 ### Contact me
 
