@@ -1,7 +1,7 @@
 ---
 layout: home
 paginate: false
-sub_title: "Data Science in NYC"
+sub_title: "Safer Data Science"
 ---
 
-I'm a experimental nuclear physicist turned data scientist.  I have a history of using computer simulations for product and experimental optimizations.  I'm currently working at General Assembly in New York City, teaching their full-time Data Science Immersive focusing on machine learning in Python, statistics, and SQL.
+I'm a experimental nuclear physicist turned data scientist.  I have a history of using computer simulations for product and experimental optimizations and integrating models into end to end solutions.  I'm currently working at Baker McKenzie, exploring how to harness generative AI tools for legal applications.
