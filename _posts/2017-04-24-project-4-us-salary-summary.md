@@ -4,7 +4,7 @@ title: US Salary Summary
 date: 2017-04-23
 published: true
 categories: projects
-image: /images/project4/Size.png
+image: /images/project4/Size_thumbnail.png
 ---
 
 
