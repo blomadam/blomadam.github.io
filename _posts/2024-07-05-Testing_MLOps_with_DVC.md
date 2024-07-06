@@ -2,7 +2,7 @@
 layout: post
 title: Testing MLOps with DVC
 date: 2024-07-06
-published: false
+published: true
 categories: projects
 <>image: /images/Testing_MLOps_with_DVC/mlops-loop-banner.jpg
 ---
