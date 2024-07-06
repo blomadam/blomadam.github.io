@@ -4,7 +4,7 @@ title: Testing MLOps with DVC
 date: 2024-07-06
 published: true
 categories: projects
-<>image: /images/Testing_MLOps_with_DVC/mlops-loop-banner.jpg
+<>image: /images/Testing_MLOps_with_DVC/ml_ops_thumbnail.png
 ---
 
 # Testing MLOps with DVC
