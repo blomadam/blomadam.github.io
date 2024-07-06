@@ -4,6 +4,7 @@ title: Open Github repo from terminal
 date: 2017-03-22
 published: true
 categories: tutorials
+image: /images/gh_terminal_thumbnail.png
 tags:
 ---
 
