@@ -4,7 +4,7 @@ title: Testing MLOps with DVC
 date: 2024-07-06
 published: false
 categories: projects
-<>image: /images/github_actions/badge_combo.png
+<>image: /images/github_actions/mlops-loop-banner.jpg
 ---
 
 # Testing MLOps with DVC
