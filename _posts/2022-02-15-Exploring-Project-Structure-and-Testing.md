@@ -7,7 +7,7 @@ categories: projects
 image: /images/github_actions/badge_combo.png
 ---
 
-I created a repository to explore and document continuous development practices.  Most notably, I want to explore how automated testing using GitHub Actions (or similar) might be useful in my future data science projects.  I'll be automating tests in [pytest][pytest], flake8[flake8], and [mypy][mypy] with [tox][tox], and also connecting to a protected database while ensuring private information is not published.
+I created a repository to explore and document continuous development practices.  Most notably, I want to explore how automated testing using GitHub Actions (or similar) might be useful in my future data science projects.  I'll be automating tests in [pytest][pytest], [flake8][flake8], and [mypy][mypy] with [tox][tox], and also connecting to a protected database while ensuring private information is not published.
 
 ### Introduction
 The impetus for testing these options out came from a video I recently viewed on YouTube by mCoding (see [here][video]).
