@@ -4,7 +4,7 @@ title: Testing MLOps with DVC
 date: 2024-07-06
 published: true
 categories: projects
-<>image: /images/Testing_MLOps_with_DVC/ml_ops_thumbnail.png
+image: /images/Testing_MLOps_with_DVC/ml_ops_thumbnail.png
 ---
 
 At work my team has been experiencing the pain of ad-hoc analysis in Jupyter Hub on tight deadlines.  You know the situation - `Untitled-4.ipynb` and `Project_v3_Alice_20240325.ipynb` in the same folder with similar modified dates and goodness knows which is the file you’re looking for.  I’m investigating tools we might consider introducing to the team workflows to potentially limit how frequently this type of situation crops up. Enter [Data Version Control \(DVC\)](https://dvc.org) - software to organize data and experiments for machine learning projects. 
