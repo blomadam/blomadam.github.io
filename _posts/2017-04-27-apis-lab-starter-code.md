@@ -4,7 +4,7 @@ title: Grid searching data pipelines for wine quality
 date: 2017-05-10
 published: true
 categories: projects
-image: /images/apis-lab-starter-code_files/wine_stats.jpeg
+image: /images/apis-lab-starter-code_files/wine_stats_thumbnail.png
 ---
 
 I collected a small set of crowd sourced wine data from the web to show how pipelines and grid search can be used together to run data analysis while being careful not to leak information from the test set into the training data.
