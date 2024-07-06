@@ -1,3 +1,12 @@
+---
+layout: post
+title: Testing MLOps with DVC
+date: 2024-07-06
+published: false
+categories: projects
+<>image: /images/github_actions/badge_combo.png
+---
+
 # Testing MLOps with DVC
 At work my team has been experiencing the pain of ad-hoc analysis in Jupyter Hub on tight deadlines.  You know the situation - Untitled-4.ipynb and Project_v3_Alice_20240325.ipynb in the same folder with similar modified dates and goodness knows which is the file you’re looking for.  I’m investigating tools we might consider introducing to the team workflows to potentially limit how frequently this type of situation crops up. Enter [Data Version Control \(DVC\)](https://dvc.org) - software to organize data and experiments for machine learning projects. I am kicking the tires to test how DVC tracks data (inputs, generated features, and output files), model versioning with parameter values, and finally to make streamlined and understandable workflows to facilitate collaboration and revisiting the project later.  Hopefully this can help my team keep a catalog of previous work with any version ready to run immediately and also to assess and share results from different models.
 
